@@ -1,0 +1,11 @@
+var mydate=new Date()
+var timeOfDay=mydate.getHours()
+
+if (timeOfDay>=6 && timeOfDay<12)
+document.write('// <i>Good morning</i> // Once you enter my house, it then becomes our house')
+else if (timeOfDay>=12 && timeOfDay<19)
+document.write('// <i>Good afternoon</i> // Once you enter my house, it then becomes our house')
+else if (timeOfDay>=19 && timeOfDay<24)
+document.write('// <i>Good evening</i> // Once you enter my house, it then becomes our house')
+else if (timeOfDay<6 || timeOfDay>=24)
+document.write('// <i>Hi Night Owl</i> // Once you enter my house, it then becomes our house')

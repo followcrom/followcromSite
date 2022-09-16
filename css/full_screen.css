@@ -1,0 +1,143 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  padding : 0px;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  background-color: #FFF;
+  min-height: 100vh;
+}
+
+
+.banner {
+  background-color: #000;
+  padding: 10px;
+  text-align: center;
+  font-family: Verdana, sans-serif;
+  color: #FFF;
+  font-weight: normal;
+  font-size: 5em;
+  background-color: #000;
+  transition-duration: 0.4s;
+}
+
+
+.welcome_bar {
+  background-color: #7d9a90;
+  padding-bottom: 5px;
+  font-family: Verdana, sans-serif;
+  text-align : center;
+  font-size: 1.4em;
+  color: #FFF;
+  animation: example 5s linear 2s infinite alternate;
+  animation-name: chicago;
+}
+
+
+@keyframes chicago {
+  0% {background-color: #7d9a90;}
+  50%  {background-color: #000;}
+  100% {background-color: grey;}
+}
+
+
+.content {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vh;
+  flex-grow: 1; 
+}
+
+
+.toptext {
+  font-family: Georgia, Tahoma, sans-serif;
+  font-size: 1.2em;
+  line-height: 2em;
+  margin-bottom: 2vh;
+}
+
+
+.fourohfour {
+  font-family: Georgia, Tahoma, sans-serif;
+  font-size: 2em;
+  line-height: 2em;
+  text-align: center;
+}
+
+
+.content_box {
+  margin-top: 1vh;
+  padding : 15px;
+  border: 8px double #000;
+  border-radius: 10px;
+}
+
+
+.content_box::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.content_box h1 {
+  font-family: Verdana;
+  text-transform: bold;
+  font-size: 2.75em;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.2; 
+}
+
+
+.content_box h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0em;
+  font-size: 1em;
+  line-height: 2;
+}
+
+
+.content_box img {
+  float: left;
+  height: 150px;
+  margin-top: 0px;
+  padding: 10px;
+}
+
+
+a { color: black; }
+a:hover { background: rgba(0, 0, 0, 0.25); }
+
+
+/*.bottomrow::before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-style: dashed;
+      border-width: 1vw 100vw 0vw 0vw;
+      border-color: #000 #7d9a90 transparent transparent;
+    }*/
+
+
+.bottomrow {
+  background-color: #7d9a90;
+  text-align: center;
+  padding-top: 0.6vw;
+  padding-right: 0px;
+  padding-bottom: 0.5vw;
+  padding-left: 0px;
+  margin-top: 1vh;
+  bottom: 0px;
+  width : 100%;
+}
+
+.icon {
+  padding-right: 5px;
+  padding-left: 5px;
+}
