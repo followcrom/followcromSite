@@ -7,43 +7,76 @@
   margin-right: 0px;
   margin-bottom: 0px;
   background-color: #FFF;
-  min-height: 100vh;
+ /* animation: fadeIn 5s; */
 }
+
+
+.bg-image {
+  background-image: url("../images/background_image.png");
+  background-color: white;
+  height: 100%;
+  background-position: top left;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: 450px;
+}
+
+
 
 
 .banner {
-  background-color: #000;
-  padding: 10px;
-  text-align: center;
-  font-family: Verdana, sans-serif;
-  color: #FFF;
-  font-weight: normal;
-  font-size: 5em;
-  background-color: #000;
-  transition-duration: 0.4s;
+  background-color: #FAEBD7;
+  border-bottom: black 10px solid;
+  padding: 0px;
 }
 
 
-.welcome_bar {
-  background-color: #7d9a90;
-  padding-bottom: 5px;
+.banner-grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+
+.banner-grid-item {
+  padding: 0px;
+}
+
+
+.banner_inner {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.banner_inner img {
+  height: 175px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  animation: fadeIn 5s;
+}
+
+
+.banner_inner h1 {
   font-family: Verdana, sans-serif;
   text-align : center;
-  font-size: 1.4em;
-  color: #FFF;
-  animation: example 5s linear 2s infinite alternate;
-  animation-name: chicago;
+  color: black;
+  font-size: 5em;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  line-height: 1.2em;
 }
 
-
-@keyframes chicago {
-  0% {background-color: #7d9a90;}
-  50%  {background-color: #000;}
-  100% {background-color: grey;}
+/* caution with older browsers */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
+
 
 
 .content {
+  z-index: 3;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -56,7 +89,7 @@
   font-family: Georgia, Tahoma, sans-serif;
   font-size: 1.2em;
   line-height: 2em;
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
 }
 
 
@@ -69,9 +102,10 @@
 
 
 .content_box {
+  background-color: white;
   margin-top: 1vh;
   padding : 15px;
-  border: 8px double #000;
+  border: 8px double black;
   border-radius: 10px;
 }
 
@@ -104,40 +138,14 @@
 
 .content_box img {
   float: left;
-  height: 150px;
+  align-content: center;
+  height: 180px;
   margin-top: 0px;
   padding: 10px;
+  border: black;
+  border-radius: 15px;
 }
 
 
 a { color: black; }
 a:hover { background: rgba(0, 0, 0, 0.25); }
-
-
-/*.bottomrow::before {
-      content: "";
-      display: block;
-      width: 0;
-      height: 0;
-      border-style: dashed;
-      border-width: 1vw 100vw 0vw 0vw;
-      border-color: #000 #7d9a90 transparent transparent;
-    }*/
-
-
-.bottomrow {
-  background-color: #7d9a90;
-  text-align: center;
-  padding-top: 0.6vw;
-  padding-right: 0px;
-  padding-bottom: 0.5vw;
-  padding-left: 0px;
-  margin-top: 1vh;
-  bottom: 0px;
-  width : 100%;
-}
-
-.icon {
-  padding-right: 5px;
-  padding-left: 5px;
-}
