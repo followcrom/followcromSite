@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"cSpell.language": "en,en-GB",
+		"editor.wordWrap": "on"
+	}
+}
