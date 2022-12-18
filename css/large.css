@@ -7,50 +7,76 @@
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 0px;
-  background-color: #FFF;
+  background-color: #000;
 }
 
 
 .banner {
   background-color: black;
   padding: 0px;
-  border-bottom: #85cdff solid 5px;
 }
 
 
+.grid-container-banner {
+  display: grid;
+  grid-template-columns: 100%;
+  justify-content: center;
+  gap: 0em;
+  padding-top: 0px;
+  margin-bottom: 0vh;
+}
+
+
+.grid-item-banner {
+  gap: 0em;
+}
+
 
 .banner img {
-  height: 400px;
+  max-height: 350px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   margin-top: 0px;
   padding: 0px;
-  /* animation: fadeIn 5s; */
-  animation-name: enticing;
-  animation-duration: 2s;
-  animation-direction: alternate-reverse;
+  animation-name: screenbreeze;
+  animation-duration: 5s;
+  animation-direction: alternate;
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
+}
+
+
+@keyframes screenbreeze {
+  0%   {background-color:#85cdff; left:0px; top:0px;}
+  25%  {background-color:beige; left:200px; top:0px;}
+  40%  {background-color:#006afe; left:200px; top:200px;}
+  50%  {background-color:pink; left:200px; top:200px;}
+  75%  {background-color:white; left:0px; top:200px;}
+  100% {background-color:green; left:0px; top:0px;}
 }
 
 
 .banner h1 {
   font-family: Verdana, sans-serif;
   text-align : center;
-  color: #85cdff;
-  font-size: 6em;
+  color: transparent;
+  font-size: 5em;
   padding: 0px;
-  margin: 0px;
+  margin: 0vh;
+  background: linear-gradient(260deg, #006afe, beige, #85cdff, white, green);
+  background-size: 200% 200%;
+  animation-direction: reverse;
+  -webkit-animation: enticing 5s ease infinite;
+  -moz-animation: enticing 5s ease infinite;
+  animation: enticing 5s ease infinite;
+  -webkit-background-clip: text;
 }
 
 
 @keyframes enticing {
-  0%   {background-color:#85cdff; left:0px; top:0px;}
-  25%  {background-color:beige; left:200px; top:0px;}
-  50%  {background-color:pink; left:200px; top:200px;}
-  75%  {background-color:white; left:0px; top:200px;}
-  100% {background-color:green; left:0px; top:0px;}
+  0%{background-position:10% 0%}
+  50%{background-position:91% 110%}
+  100%{background-position:10% 0%}
 }
 
 
@@ -77,6 +103,7 @@
 
 .toptext {
   font-family: Georgia, Tahoma, sans-serif;
+  color: #85cdff;
   font-size: 1.2em;
   line-height: 2em;
   margin-bottom: 1vh;
@@ -84,7 +111,7 @@
 
 
 .content_box {
-  background-color: white;
+  background-color: #85cdff;
   margin-top: 1vh;
   padding : 15px;
   border: 8px double black;
@@ -125,7 +152,7 @@
 }
 
 .box_image:hover {
-  box-shadow: 0 0 1px 1px rgba(0, 140, 186, 0.5);
+  box-shadow: 0 0 1px 1px rgba(0, 140, 186, 0.2);
 }
 
 
@@ -156,7 +183,7 @@ a.page:hover {
   font-family: Verdana, sans-serif;
   font-size: 0.9em;
   color: #000;
-  background-color: white;
+  background-color: #85cdff;
   margin-top: 1vh;
   margin-bottom: 1vh;
   padding : 5px;
@@ -203,7 +230,7 @@ cursor: pointer;
 }
 
 input[type=submit]:hover {
-  background-color: #7d9a90;
+  background-color: white;
   color: #000;
 }
 
@@ -211,6 +238,7 @@ input[type=submit]:hover {
 .submitted {
   padding : 10px;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
   color: #000;
   text-align : center;
   margin-top: auto;
@@ -220,7 +248,12 @@ input[type=submit]:hover {
 
 
 .bottomrow {
-  background-color: #85cdff;
+  background: linear-gradient(260deg, pink, beige, #85cdff, white);
+  background-size: 200% 200%;
+  animation-direction: alternate-reverse;
+  -webkit-animation: enticing 5s ease infinite;
+  -moz-animation: enticing 5s ease infinite;
+  animation: enticing 5s ease infinite;
   text-align: center;
   padding-top: 0.6vw;
   padding-right: 0px;
@@ -229,13 +262,13 @@ input[type=submit]:hover {
   margin-top: 1.5vh;
   bottom: 0px;
   width : 100%;
-  border-top: 5px solid black;
 }
 
 
 .icon {
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
   width: 32px;
   height: 32px;
 }
@@ -243,37 +276,36 @@ input[type=submit]:hover {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 25% 25%;
+  grid-template-columns: 5% 5% 5% 5% 5%;
   justify-content: center;
   gap: 1em;
-  padding: 10px;
+  padding: 0px;
 }
 
 
 .grid-item {
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
   font-family: Verdana, sans-serif;
-  font-size: 0.9em;
+  font-size: 0.75em;
   text-align: center;
 }
 
 
 a.footer:link {
   color:#000;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 a.footer:visited {
   color:#000;
-  text-decoration: none;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 a.footer:hover {
   color: black;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
 }
 
@@ -290,6 +322,7 @@ a.footer:hover {
 
 
 .fourohfour {
+  color: black;
   font-family: Georgia, Tahoma, sans-serif;
   font-size: 2em;
   line-height: 2em;
