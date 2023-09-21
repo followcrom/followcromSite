@@ -23,10 +23,10 @@ jobs:
       # Step 3: Deploy the website to the IONOS server via SFTP
       - name: Deploy to IONOS via SFTP
         run: |
-          # Create an SFTP batchfile to put files
+          echo "Creating an SFTP batchfile to put files"
           echo "put -r ./* /" > sftp_batchfile
 
-          # Use the batchfile with sftp to put files on your server
+          echo "Using the batchfile with sftp to put files on your server"
           sshpass -p ${{ secrets.SERVER_PASSWORD }} sftp -oBatchMode=no -b sftp_batchfile -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@access936074260.webspace-data.io
         env:
           SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
