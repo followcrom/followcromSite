@@ -53,7 +53,7 @@ if (count($errors) === 0) :
     
     { $url = 'https://www.google.com/recaptcha/api/siteverify';
         $data = [
-            'secret' => '6LdeSBckAAAAACaavhAeqLQNIBp5pwullUyh9nDk',
+            'secret' => 'xxx',
             'response' => $_POST['g-recaptcha-response'],
             'remoteip' => $_SERVER['REMOTE_ADDR']
         ];
