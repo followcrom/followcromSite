@@ -1,0 +1,32 @@
+# This workflow deploys the website to an IONOS server via SFTP whenever there's a push to the main branch
+
+name: Deploy Website via SFTP
+
+on:
+  push:
+    branches:
+      - main # Trigger on push to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+
+    steps:
+      # Step 1: Checkout the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Install SSH client
+      - name: Install SSH Client
+        run: sudo apt-get install -y sshpass
+
+      # Step 3: Deploy the website to the IONOS server via SFTP
+      - name: Deploy to IONOS via SFTP
+        run: |
+          # Create an SFTP batchfile to put files
+          echo "put -r ./* /" > sftp_batchfile
+
+          # Use the batchfile with sftp to put files on your server
+          sshpass -p ${{ secrets.SERVER_PASSWORD }} sftp -oBatchMode=no -b sftp_batchfile -o StrictHostKeyChecking=no ${{ secrets.SERVER_USERNAME }}@access936074260.webspace-data.io
+        env:
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
