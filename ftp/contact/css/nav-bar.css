@@ -1,0 +1,96 @@
+.icon_row {
+  text-align: center;
+  padding-top: 0.5vw;
+  padding-right: 0px;
+  padding-bottom: 0.5vw;
+  padding-left: 0px;
+  margin-top: 0;
+  width : 100%;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 5% 5% 5% 5%;
+  justify-content: center;
+  gap: 1em;
+  padding: 0px;
+}
+
+
+
+
+.grid-item {
+  text-align: center;
+}
+
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
+
+
+.rollover_row {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: clamp(2vw, 3vw, 4vw);
+  margin-bottom: 2vh;
+  font-family: 'Raleway', sans-serif;
+  margin: 0 auto; /* add this line to center the element horizontally */
+}
+
+
+
+
+/* .rollover_row {
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 3vw;
+  margin-bottom: 2vh;
+  font-family: 'Raleway', sans-serif;
+} */
+
+
+.left-div {
+  width: 50%;
+  margin-left: 5vw;
+  text-align: right;
+  color: #0f4c81;
+}
+
+.nav_hover {
+  width: 50%;
+  text-align: left;
+  color: #85cdff;
+}
+
+
+
+
+
+a:link, a:visited, a:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+
+@media only screen and (max-width: 1023px) {
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5vw;
+    padding: 10px;
+  }
+
+  .rollover_row {
+    display: none;
+  }
+}

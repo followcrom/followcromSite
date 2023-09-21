@@ -1,0 +1,121 @@
+h1 {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+p {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+
+label {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+
+.form_box {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  color: #000;
+  padding: 0px;
+}
+
+::placeholder {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  font-style: italic;
+}
+
+
+.errors {
+font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+font-size: 1em;
+color: red;
+}
+
+
+input[type=text], select {
+  width: 90%;
+  padding: 12px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid #7d9a90;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+width: 90%;
+padding: 12px;
+margin: 5px 0;
+display: inline-block;
+border: 1px solid #7d9a90;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+input[type=submit] {
+width: 60%;
+padding: 12px;
+margin: 0;
+background-color: #000;
+color: #FFF;
+font-size: 1.5em;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #85cdff;
+  color: #000;
+}
+
+
+/* .g-recaptcha > div:first-of-type {
+  margin: 10px auto;
+  transform: scale(0.77);
+  transform-origin: top left;
+  margin-left: 0%;
+} */
+
+
+.g-recaptcha > div:first-of-type {
+  margin-left: 50%;
+  transform: translateX(-50%) scale(0.77);
+}
+
+.submitted {
+  padding : 10px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.8;
+  color: #000;
+  text-align : center;
+  margin: auto;
+}
+
+
+
+a.page:link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a.page:visited {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a.page:hover {
+  background-color: #0f4c81;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,219 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding : 0px;
+  margin: 0px;
+  background-color: #000;
+}
+
+
+.banner {
+  padding: 0px;
+}
+
+
+.banner h1 {
+  font-family: 'Raleway', sans-serif;
+  text-align : center;
+  color: transparent;
+  font-size: 5em;
+  padding: 0px;
+  margin: 0vh;
+  background: linear-gradient(260deg, #006afe, beige, #85cdff, white, green);
+  background-size: 200% 200%;
+  animation-direction: reverse;
+  -webkit-animation: enticing 5s ease infinite;
+  -moz-animation: enticing 5s ease infinite;
+  animation: enticing 5s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.banner h1 .online {
+  display: inline;
+}
+
+
+@keyframes enticing {
+  0%{background-position:10% 0%}
+  50%{background-position:91% 110%}
+  100%{background-position:10% 0%}
+}
+
+
+
+.vinyl {
+  margin: auto;
+  margin-top: 0px;
+  padding: 0px;
+  cursor: pointer;
+  animation: rotate 2.5s linear infinite paused;
+  transform-origin: center center;
+}
+
+.vinyl img {
+  max-height: 400px;
+}
+
+.vinyl.play {
+  animation-play-state: running;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.content {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 0.5vh;
+    flex-grow: 1; 
+  }
+
+
+.toptext {
+  margin: auto;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  color: #85cdff;
+  font-size: 1.2em;
+  line-height: 2em;
+  margin-bottom: 1vh;
+}
+
+
+.content_box {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #85cdff;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  padding : 15px;
+  border: 8px double black;
+  border-radius: 10px;
+}
+
+.content_box::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.content_box h1 {
+  font-family: Verdana;
+  text-transform: bold;
+  font-size: 2.75em;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.2; 
+}
+
+
+
+.content_box h3 {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  letter-spacing: 0em;
+  font-size: 1em;
+  line-height: 2;
+}
+
+.box_image {
+  float: left;
+  align-content: center;
+  height: 200px;
+  width: 200px;
+  margin-top: 0px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+/* .box_image:hover {
+  box-shadow: 0 0 1px 1px rgba(0, 140, 186, 0.2);
+} */
+
+
+a.page:link {
+  color:#000;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a.page:visited {
+  color:#000;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a.page:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+a.contact:link {
+  font-weight: bold;
+  letter-spacing: 0.15rem;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a.contact:visited {
+  color:white;
+  cursor: pointer;
+}
+
+a.contact:hover {
+  background-color: white;
+  color: black;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.icon {
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  width: 32px;
+  height: 32px;
+}
+
+
+
+.fourohfour {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #85cdff;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+  padding : 15px;
+  border: 8px double black;
+  border-radius: 10px;
+  font-family: 'Roboto Mono', monospace;
+  color: black;
+  font-size: 1.8rem;
+  line-height: 2em;
+  text-align: center;
+}
+
+a:link, a:visited, a:hover {
+  color: inherit;
+  text-decoration: inherit;
+}

@@ -1,0 +1,113 @@
+h1 {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+p {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+}
+
+
+label {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+
+.form_box {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  color: #000;
+}
+
+::placeholder {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  font-style: italic;
+}
+
+
+.errors {
+font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+font-weight: bold;
+font-size: 1em;
+color: red;
+}
+
+.g-recaptcha > div:first-of-type {
+  margin: 10px auto;
+}
+
+
+
+input[type=text], select {
+  width: 80%;
+  padding: 12px;
+  margin: 5px 0;
+  display: inline-block;
+  border: 1px solid #7d9a90;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+width: 80%;
+padding: 12px;
+margin: 5px 0;
+display: inline-block;
+border: 1px solid #7d9a90;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+input[type=submit] {
+width: 304px;
+padding: 12px;
+margin: 8px 0;
+background-color: #000;
+color: #FFF;
+font-size: 1.5em;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #85cdff;
+  color: #000;
+}
+
+
+.submitted {
+  padding : 10px;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 2em;
+  line-height: 2;
+  color: #000;
+  text-align : center;
+  margin: auto;
+}
+
+
+
+a.page:link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a.page:visited {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a.page:hover {
+  background-color: #0f4c81;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
