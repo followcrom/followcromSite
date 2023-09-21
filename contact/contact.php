@@ -1,7 +1,5 @@
 <?php include 'header.html';?>
 
-
-
 <div class="form_box">
 
     <?php
