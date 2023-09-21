@@ -2,3 +2,4 @@
 
 # Ignore the config.ini in the contact directory
 /contact/config.ini
+robots.txt

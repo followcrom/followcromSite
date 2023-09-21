@@ -112,9 +112,11 @@ if (count($errors) === 0) :
 
     <br>
 
-    <li><a class="page" href="contact.php">Send another message</a></li>
-    <li><a class="page" href="https://linkedin.com/in/followCrom">Connect on LinkedIn</a></li>
-    <li><a class="page" href="https://github.com/followcrom">Explore my GitHub repositories</a></li>
+    <ul>
+        <li><a class="page" href="contact.php">Send another message</a></li>
+        <li><a class="page" href="https://linkedin.com/in/followCrom">Connect on LinkedIn</a></li>
+        <li><a class="page" href="https://github.com/followcrom">Explore my GitHub repositories</a></li>
+    </ul>
 </div>
 
 
