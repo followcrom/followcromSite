@@ -5,6 +5,8 @@ const EMAIL_REQUIRED = 'Please enter your email';
 const EMAIL_INVALID = 'Please enter a valid email';
 const NO_MESSAGE = 'Please leave a message';
 
+$config = parse_ini_file('../config.ini');
+$recaptchaSecretKey = $config['secret_key'];
 
 // sanitize and validate name
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
@@ -53,7 +55,8 @@ if (count($errors) === 0) :
     
     { $url = 'https://www.google.com/recaptcha/api/siteverify';
         $data = [
-            'secret' => 'xxx',
+            // Example usage
+            'secret' => $recaptchaSecretKey,
             'response' => $_POST['g-recaptcha-response'],
             'remoteip' => $_SERVER['REMOTE_ADDR']
         ];
