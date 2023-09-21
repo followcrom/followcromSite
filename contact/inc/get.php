@@ -27,6 +27,6 @@
             class="<?php echo isset($errors['message']) ? 'error' : '' ?>"><?php echo $inputs['message'] ?? '' ?></textarea>
         <div class="errors"><?php echo $errors['message'] ?? '' ?></div>
     </div>
-    <div class="g-recaptcha" data-sitekey="6LeKpUEoAAAAAPwQTd-WhEXfziczp-3uxioKYi4O"></div>
+    <div class="g-recaptcha" data-sitekey="6LfuP0IoAAAAANmW3Twj9zxwl0FkpkfGjiZqkWtU"></div>
     <input type="submit" value="Submit">
 </form>
