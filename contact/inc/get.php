@@ -19,7 +19,7 @@
         <label for="email">
             <h3>Email:</h3>
         </label>
-        <input type="email" name="email" id="email" placeholder="Your email (required)" autocomplete="email"
+        <input type="text" name="email" id="email" placeholder="Your email (required)" autocomplete="email"
             value="<?php echo $inputs['email'] ?? '' ?>" class="<?php echo isset($errors['email']) ? 'error' : ''  ?>">
         <div class="errors"><?php echo $errors['email'] ?? '' ?></div>
     </div>
