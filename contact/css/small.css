@@ -102,6 +102,15 @@ input[type=submit]:hover {
 }
 
 
+.icon-item {
+  display: flex;
+  align-items: center;
+}
+
+.icon-item i {
+  margin-right: 8px;
+}
+
 
 a.page:link {
   text-decoration: underline;

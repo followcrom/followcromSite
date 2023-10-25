@@ -93,6 +93,14 @@ input[type=submit]:hover {
   margin: auto;
 }
 
+.icon-item {
+  display: flex;
+  align-items: center;
+}
+
+.icon-item i {
+  margin-right: 8px;
+}
 
 
 a.page:link {
