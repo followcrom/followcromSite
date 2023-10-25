@@ -167,7 +167,12 @@
   height: 32px;
 }
 
-
+.fa-brands, .fa-solid {
+  font-size: 26px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
 
 a.page:link {
   color: #000;

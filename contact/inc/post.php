@@ -105,19 +105,19 @@ if (count($errors) === 0) :
 
 
 <div class="submitted">
-    Thanks for your message <b><?php echo htmlspecialchars($name) ?></b>.
-    <br>
-    I will get back to you at
-    <i><?php echo htmlspecialchars($email) ?></i> within 48 hours.
+    <p>Thanks for your message <b><?php echo htmlspecialchars($name) ?></b>.</p>
+    <p>I will get back to you at <i><?php echo htmlspecialchars($email) ?></i> within 48 hours.</p>
 
-    <br>
-
-    <ul>
-        <li><a class="page" href="contact.php">Send another message</a></li>
-        <li><a class="page" href="https://linkedin.com/in/followCrom">Connect on LinkedIn</a></li>
-        <li><a class="page" href="https://github.com/followcrom">Explore my GitHub repositories</a></li>
-    </ul>
+    <div class="icon-list">
+        <div class="icon-item"><i class="fa-solid fa-envelope" style="color: #FF9900;"></i> <a class="page"
+                href="contact.php">Send another message</a></div>
+        <div class="icon-item"><i class="fa-brands fa-linkedin" style="color: #0077B5;"></i> <a class="page"
+                href="https://linkedin.com/in/followCrom">Connect on LinkedIn</a></div>
+        <div class="icon-item"><i class="fa-brands fa-github" style="color: #333;"></i> <a class="page"
+                href="https://github.com/followcrom">Explore my GitHub repositories</a></div>
+    </div>
 </div>
+
 
 
 <?php endif ?>
