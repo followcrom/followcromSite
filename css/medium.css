@@ -15,10 +15,10 @@
 
 
 .banner h1 {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Exo 2', sans-serif;
   text-align : center;
   color: transparent;
-  font-size: 6em;
+  font-size: 4rem;
   padding: 0px;
   margin: 0px;
   background: linear-gradient(260deg, pink, beige, #85cdff, white, green);
@@ -34,7 +34,10 @@
 
 
 .banner h1 .online {
-  display: none;
+  display: inline;
+  font-family: 'Reggae One', sans-serif;
+  font-size: 3rem;
+  color: aquamarine;
 }
 
 
@@ -55,7 +58,7 @@
 }
 
 .vinyl img {
-  max-height: 500px;
+  max-height: 325px;
 }
 
 .vinyl.play {
@@ -85,12 +88,21 @@
 
 
 .toptext {
-  font-family: 'Open Sans', sans-serif;
-  color: #85cdff;
-  font-size: 1.2em;
-  line-height: 2em;
-  margin-bottom: 2vh;
+  margin: auto;
   text-align: center;
+  font-family: 'Changa', sans-serif;
+  color: #85cdff;
+  font-size: 1.4em;
+  line-height: 2em;
+  margin-bottom: 1vh;
+}
+
+.toptext .fa-brands, .toptext .fa-solid, .toptext .fa-ello {
+  font-size: 20px;
+  color: #85cdff;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
 }
 
 
@@ -120,7 +132,7 @@
   font-size: 2em;
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 1em; 
+  line-height: 1.2em; 
 }
 
 
@@ -178,8 +190,7 @@ a.contact:visited {
 }
 
 a.contact:hover {
-  background-color: white;
-  color: black;
+  color: aquamarine;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -193,8 +204,9 @@ a.contact:hover {
   height: 32px;
 }
 
-.fa-brands, .fa-solid {
+.fa-brands, .fa-solid, .fa-ello, .fa-regular {
   font-size: 26px;
+  color: black;
   padding-right: 10px;
   padding-left: 10px;
   padding-bottom: 5px;
