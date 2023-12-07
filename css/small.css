@@ -209,14 +209,14 @@ a.contact:link {
   cursor: pointer;
 }
 
-a.contact:hover {
-  color: aquamarine;
-  text-decoration: underline;
+a.contact:visited {
+  color:white;
   cursor: pointer;
 }
 
-a.contact:visited {
-  color:white;
+a.contact:hover {
+  color: aquamarine;
+  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -233,8 +233,8 @@ a.contact:visited {
   border-radius: 10px;
   font-family: 'Roboto Mono', monospace;
   color: black;
-  font-size: 1.8rem;
-  line-height: 2em;
+  font-size: 1.2rem;
+  line-height: 1em;
   text-align: center;
 }
 

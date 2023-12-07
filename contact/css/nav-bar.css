@@ -93,6 +93,11 @@ a:link, a:visited, a:hover {
   .rollover_row {
     display: none;
   }
+
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 /* For high-resolution screens (e.g., Retina displays) */
