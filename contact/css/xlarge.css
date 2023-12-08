@@ -1,7 +1,7 @@
 h1 {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-family: 'Ralway', Arial, Helvetica, sans-serif;
   font-size: 3em;
-  margin: 0;
+  margin: 10px 0 0 0;
   padding: 0;
 }
 
@@ -91,6 +91,12 @@ input[type=submit]:hover {
   color: #000;
   text-align : center;
   margin: auto;
+}
+
+.icon-list {
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 
 .icon-item {

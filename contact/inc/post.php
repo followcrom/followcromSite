@@ -114,7 +114,7 @@ if (count($errors) === 0) :
         <div class="icon-item"><i class="fa-brands fa-linkedin" style="color: #0077B5;"></i> <a class="page"
                 href="https://linkedin.com/in/followCrom">Connect on LinkedIn</a></div>
         <div class="icon-item"><i class="fa-brands fa-github" style="color: #333;"></i> <a class="page"
-                href="https://github.com/followcrom">Explore my GitHub repositories</a></div>
+                href="https://github.com/followcrom">Explore my GitHub repos</a></div>
     </div>
 </div>
 

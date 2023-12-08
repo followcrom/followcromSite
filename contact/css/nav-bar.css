@@ -40,7 +40,8 @@
   font-size: clamp(2vw, 3vw, 4vw);
   margin-bottom: 2vh;
   font-family: 'Raleway', sans-serif;
-  margin: 0 auto; /* add this line to center the element horizontally */
+  margin: 0 auto;
+  /* border-bottom: 2px solid #000 ; */
 }
 
 

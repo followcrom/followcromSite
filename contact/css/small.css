@@ -1,5 +1,5 @@
 h1 {
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-family: 'Ralway', Arial, Helvetica, sans-serif;
   font-size: 2em;
   margin: 10px 0 0 0;
   padding: 0;
@@ -94,13 +94,18 @@ input[type=submit]:hover {
 .submitted {
   padding : 10px;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-size: 1em;
+  font-size: 1.2em;
   line-height: 1.8;
   color: #000;
   text-align : center;
   margin: auto;
 }
 
+.icon-list {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
 
 .icon-item {
   display: flex;

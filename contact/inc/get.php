@@ -4,7 +4,8 @@
 
     <h1>Get in Touch</h1>
 
-    <p>Let's connect! Drop me a message and I will get back to you within 48 hours.</p>
+    <p><i class="fa-solid fa-handshake"></i> Let's connect. Send me a message and I will get back to you within 48
+        hours.</p>
 
     <div>
         <label for="name">
