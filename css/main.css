@@ -17,18 +17,21 @@
   font-family: 'Exo 2', sans-serif;
   text-align : center;
   color: transparent;
-  font-size: 5rem;
+  font-size: 5em;
   padding: 0px;
   margin: 0vh;
   background: linear-gradient(260deg, #006afe, beige, #85cdff, white, green);
   background-size: 200% 200%;
-  animation-direction: reverse;
-  -webkit-animation: enticing 5s ease infinite;
-  -moz-animation: enticing 5s ease infinite;
-  animation: enticing 5s ease infinite;
+  animation: text_wipe;
+  -webkit-animation: text_wipe 5s ease infinite;
+  -moz-animation: text_wipe 5s ease infinite;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
 }
 
 
@@ -40,13 +43,23 @@
 }
 
 
-@keyframes enticing {
+@keyframes text_wipe {
   0%{background-position:10% 0%}
   50%{background-position:91% 110%}
   100%{background-position:10% 0%}
 }
 
+@-moz-keyframes text_wipe {
+  0%{background-position:10% 0%}
+  50%{background-position:91% 110%}
+  100%{background-position:10% 0%}
+}
 
+@-webkit-keyframes text_wipe {
+  0%{background-position:10% 0%}
+  50%{background-position:91% 110%}
+  100%{background-position:10% 0%}
+}
 
 .vinyl {
   margin: auto;
@@ -78,12 +91,11 @@
 
 
 .content {
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 0.5vh;
-    flex-grow: 1; 
-  }
-
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 0.5vh;
+  flex-grow: 1; 
+}
 
 .toptext {
   margin: auto;
@@ -102,8 +114,6 @@
   padding-left: 10px;
   padding-bottom: 5px;
 }
-
-
 
 .content_box {
   width: 60%;
@@ -132,8 +142,6 @@
   line-height: 1.2; 
 }
 
-
-
 .content_box h3 {
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-weight: normal;
@@ -151,11 +159,6 @@
   padding: 10px;
   border-radius: 15px;
 }
-
-/* .box_image:hover {
-  box-shadow: 0 0 1px 1px rgba(0, 140, 186, 0.2);
-} */
-
 
 a.page:link {
   color:#000;
@@ -207,7 +210,7 @@ a.contact:hover {
 
 .fa-brands, .fa-solid, .fa-ello, .fa-regular {
   font-size: 26px;
-  color: black;
+  /* color: black; */
   padding-right: 10px;
   padding-left: 10px;
   padding-bottom: 5px;
@@ -216,22 +219,147 @@ a.contact:hover {
 
 .fourohfour {
   width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #85cdff;
-  margin-top: 0.5vh;
-  margin-bottom: 0.5vh;
-  padding : 15px;
+  margin: 0.5vh auto;
+  padding: 15px;
   border: 8px double black;
   border-radius: 10px;
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   color: black;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 2em;
   text-align: center;
+  background-color: #85cdff;
+}
+
+.fourohfour b {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 3rem;
 }
 
 a:link, a:visited, a:hover {
   color: inherit;
   text-decoration: inherit;
+}
+
+
+
+
+/* Screens between 1024px and 1439px */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .content_box {
+    width: 100%;
+  }
+
+  .fourohfour {
+    width: 100%;
+  }
+}
+
+
+
+/* Screens between 640px and 1023px */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .banner h1 {
+    font-size: 4em;
+}
+
+.banner h1 .online {
+  font-size: 3rem;
+}
+
+.content {
+  width: 90%;
+}
+
+.content_box {
+  width: 95%;
+}
+
+.content_box h1 {
+  font-size: 2em;
+}
+
+.content_box h3 {
+  font-size: 0.95em;
+  line-height: 1.8;
+}
+
+.box_image {
+  height: 230px;
+  width: 230px;
+}
+
+.fourohfour {
+  width: 80%;
+}
+}
+
+
+
+
+/* Screens less than 640px */
+@media (max-width: 639px) {
+  .banner h1 {
+    font-size: 3em;
+}
+
+.banner h1 .online {
+  display: none;
+}
+
+.vinyl img {
+  max-height: 200px;
+}
+
+.content {
+  width: 95%;
+}
+
+
+.toptext {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
+
+.content_box {
+  width: auto;
+}
+
+.box_image {
+  float: none; /* Remove float */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; /* Ensures image responsiveness */
+}
+
+.content_box h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.content_box h3 {
+  font-size: 1rem;
+  line-height: 2;
+  padding: 0px;
+  clear: both;
+}
+
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+.fourohfour {
+  width: 80%;
+  font-size: 1rem;
+  line-height: 2em;
+}
+
+.fourohfour b {
+  font-size: 2rem;
+}
 }
