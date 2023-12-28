@@ -323,7 +323,7 @@ a:link, a:visited, a:hover {
 
 
 .content_box {
-  width: 100%;
+  width: auto;
 }
 
 .box_image {
