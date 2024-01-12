@@ -1,7 +1,26 @@
 {
   "short_name": "followCrom",
   "name": "followCrom.online",
+  "categories": [
+    "coding",
+    "web development",
+    "web design",
+    "javascript",
+    "python",
+    "writing"
+  ],
+  "author": "Cromwell D. Enage",
   "icons": [
+    {
+      "src": "images/favs/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "images/favs/favicon-36x36.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    },
     {
       "src": "images/favs/android-chrome-192x192.png",
       "sizes": "192x192",
@@ -16,5 +35,6 @@
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#85cdff",
+  "description": "followCrom's portfolio website"
 }

@@ -26,9 +26,9 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link:focus {
+.navbar .navbar-nav .nav-link:hover {
   border-radius: 15px;
-  background-color: white;
+  background-color: #85cdff;
   color: #000;
   /* color: #004897; */
   cursor: pointer;
