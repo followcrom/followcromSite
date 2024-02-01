@@ -56,7 +56,6 @@ if (count($errors) === 0) :
     
     { $url = 'https://www.google.com/recaptcha/api/siteverify';
         $data = [
-            // Example usage
             'secret' => $recaptchaSecretKey,
             'response' => $_POST['g-recaptcha-response'],
             'remoteip' => $_SERVER['REMOTE_ADDR']

@@ -16,9 +16,9 @@ p {
   font-size: 1.2em;
 }
 
-/* p .fa-solid {
-  font-size: 1em;
-} */
+p .fa-solid {
+  font-size: 1.05em;
+}
 
 
 label {
