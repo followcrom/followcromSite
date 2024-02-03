@@ -9,7 +9,7 @@
 
     <div>
         <label for="name">
-            <h3>Name:</h3>
+            Name:
         </label>
         <input type="text" name="name" id="name" placeholder="Your name (required)" autocomplete="name"
             value="<?php echo $inputs['name'] ?? '' ?>" class="<?php echo isset($errors['name']) ? 'error' : ''  ?>">
@@ -18,7 +18,7 @@
 
     <div>
         <label for="email">
-            <h3>Email:</h3>
+            Email:
         </label>
         <input type="text" name="email" id="email" placeholder="Your email (required)" autocomplete="email"
             value="<?php echo $inputs['email'] ?? '' ?>" class="<?php echo isset($errors['email']) ? 'error' : ''  ?>">
@@ -27,7 +27,7 @@
 
     <div>
         <label for='message'>
-            <h3>Message:</h3>
+            Message:
         </label>
         <textarea name="message" id="message" rows="7" cols="37" placeholder="Your message (required)"
             class="<?php echo isset($errors['message']) ? 'error' : '' ?>"><?php echo $inputs['message'] ?? '' ?></textarea>

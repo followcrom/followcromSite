@@ -22,8 +22,11 @@ p .fa-solid {
 
 
 label {
+  display: block;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-size: 1em;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 10px;
 }
 
 
@@ -94,10 +97,6 @@ input[type=submit]:hover {
 
 
 .submitted {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   padding: 10px;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 2em;
@@ -105,6 +104,15 @@ input[type=submit]:hover {
   color: #000;
   text-align: center;
   margin: auto;
+}
+
+
+
+.submitted.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 
@@ -116,7 +124,6 @@ input[type=submit]:hover {
 .icon-item i {
   margin-right: 8px;
 }
-
 
 a.page:link {
   text-decoration: underline;
