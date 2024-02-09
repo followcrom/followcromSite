@@ -105,7 +105,7 @@ if (count($errors) === 0) :
 
 <div class="submitted icons">
     <p>Thanks for your message <b><?php echo htmlspecialchars($name) ?></b>.
-        <br><br>I will get back to you at <i><?php echo htmlspecialchars($email) ?></i> within 48 hours.
+        <br>I will get back to you at <i><?php echo htmlspecialchars($email) ?></i> within 48 hours.
     </p>
 
     <div class="icon-list">
