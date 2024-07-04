@@ -21,7 +21,7 @@
   padding: 0px;
   margin: 0vh;
   background: linear-gradient(260deg, #006afe, beige, #85cdff, white, pink);
-  background-size: 200% 200%;
+  background-size: 200% 180%;
   animation: text_wipe;
   -webkit-animation: text_wipe 5s ease infinite;
   -moz-animation: text_wipe 5s ease infinite;

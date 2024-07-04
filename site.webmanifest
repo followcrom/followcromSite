@@ -9,7 +9,7 @@
     "python",
     "writing"
   ],
-  "author": "Cromwell D. Enage",
+  "author": "Cromwell D. Monmoth",
   "icons": [
     {
       "src": "images/favs/favicon-16x16.png",
@@ -17,7 +17,7 @@
       "type": "image/png"
     },
     {
-      "src": "images/favs/favicon-36x36.png",
+      "src": "images/favs/favicon-32x32.png",
       "sizes": "36x36",
       "type": "image/png"
     },
@@ -36,5 +36,5 @@
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#85cdff",
-  "description": "followCrom's portfolio website"
+  "description": "followCrom's website"
 }
