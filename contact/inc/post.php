@@ -86,7 +86,7 @@ if (count($errors) === 0) :
         
             }
             else if ($captcha_success->success==true) {
-                $myemail = 'info@followcrom.online';
+                $myemail = 'followcrom@gmail.com';
                 $to = $myemail;
                 $apires = serialize($captcha_success);
                 $email_subject = "Contact Form Submission";
