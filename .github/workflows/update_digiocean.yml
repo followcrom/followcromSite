@@ -1,36 +1,41 @@
-name: Deploy Website to D.O.
+name: Deploy Website to Digital Ocean
 
 on:
   push:
     branches:
-      - main
+      - main # Trigger on push to main branch
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner
 
     steps:
+      # Step 1: Checkout the code from the repository
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Setup SSH
-        run: |
-          echo "$SSH_PRIVATE_KEY" > private_key
-          chmod 600 private_key
-          eval "$(ssh-agent -s)"
-          ssh-add private_key
-          ssh-keyscan -H 178.62.84.97 >> ~/.ssh/known_hosts
+      # Step 2: Install rsync
+      - name: Install rsync
+        run: sudo apt-get update && sudo apt-get install -y rsync
 
-      - name: Check SSH Key Format
-        run: |
-          echo "$SSH_PRIVATE_KEY" | tr -d '\r' > private_key
-          echo "SSH key length: $(wc -l < private_key) lines"
-          head -n 5 private_key  # Print the first 5 lines for verification
-          tail -n 5 private_key  # Print the last 5 lines for verification
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      # Step 3: Set up SSH key
+      - name: Set up SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Sync files with rsync
+      # Step 4: Add Digital Ocean droplet to known hosts
+      - name: Add Digital Ocean droplet to known hosts
+        run: ssh-keyscan -H 178.62.84.97 >> ~/.ssh/known_hosts
+
+      # Step 5: Deploy using rsync, excluding unnecessary files and directories
+      - name: Deploy to Digital Ocean VM via Rsync
         run: |
           echo "Starting rsync deployment"
           rsync -avz --delete --exclude='.git/' --exclude='.github/' --exclude='.gitignore' ./ root@178.62.84.97:/var/www/fc/
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh-auth.sock
+
+      # Step 6: Verify deployment
+      - name: Verify deployment
+        run: ssh root@178.62.84.97 "ls -la /var/www/fc/"
