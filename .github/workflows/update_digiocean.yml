@@ -1,0 +1,31 @@
+name: Deploy Website to D.O.
+
+on:
+  push:
+    branches:
+      - main # Trigger on push to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner
+
+    steps:
+      # Step 1: Checkout the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up SSH agent and add SSH key from GitHub Secrets
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Step 3: Install Rsync
+      - name: Install Rsync
+        run: sudo apt-get install -y rsync
+
+      # Step 4: Rsync the website to the Digital Ocean VM
+      - name: Deploy to Digital Ocean via Rsync
+        run: |
+          echo "Starting rsync deployment"
+          rsync -avz --delete --exclude='.git/' --exclude='.github/' --exclude='.gitignore' ./ root@178.62.84.97:/var/www/fc/
