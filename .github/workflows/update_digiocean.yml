@@ -23,10 +23,21 @@ jobs:
         uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh-auth.sock
+          SSH_AGENT_VERBOSE: 1
 
       # Step 4: Add Digital Ocean droplet to known hosts
       - name: Add Digital Ocean droplet to known hosts
         run: ssh-keyscan -H 178.62.84.97 >> ~/.ssh/known_hosts
+
+      # New Step: Debug SSH connection
+      - name: Debug SSH connection
+        run: |
+          echo "Debugging SSH connection"
+          ssh -v root@178.62.84.97 "echo SSH connection successful"
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh-auth.sock
 
       # Step 5: Deploy using rsync, excluding unnecessary files and directories
       - name: Deploy to Digital Ocean VM via Rsync
