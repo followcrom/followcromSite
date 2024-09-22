@@ -21,9 +21,17 @@ jobs:
           ssh-add private_key
           ssh-keyscan -H 178.62.84.97 >> ~/.ssh/known_hosts
 
+      Optional: Uncomment this for debugging the SSH key format
+      - name: Check SSH Key Format
+        run: |
+          echo "$SSH_PRIVATE_KEY" | tr -d '\r' > private_key
+          echo "SSH key length: $(wc -l < private_key) lines"
+          head -n 5 private_key  # Print the first 5 lines for verification
+          tail -n 5 private_key  # Print the last 5 lines for verification
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
       - name: Sync files with rsync
         run: |
           echo "Starting rsync deployment"
           rsync -avz --delete --exclude='.git/' --exclude='.github/' --exclude='.gitignore' ./ root@178.62.84.97:/var/www/fc/
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
