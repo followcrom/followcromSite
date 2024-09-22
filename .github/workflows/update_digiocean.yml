@@ -21,7 +21,6 @@ jobs:
           ssh-add private_key
           ssh-keyscan -H 178.62.84.97 >> ~/.ssh/known_hosts
 
-      Optional: Uncomment this for debugging the SSH key format
       - name: Check SSH Key Format
         run: |
           echo "$SSH_PRIVATE_KEY" | tr -d '\r' > private_key
