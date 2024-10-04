@@ -40,7 +40,7 @@
   </div> -->
 
 
-  <script>
+  <!-- <script>
     $(function() {
       // when the button with id "refresh" is clicked
       $("#refresh").click(function() {
@@ -51,7 +51,7 @@
         return false;
       })
     })
-  </script>
+  </script> -->
 
 
   <div class="banner">
