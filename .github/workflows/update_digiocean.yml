@@ -34,7 +34,7 @@ jobs:
       - name: Deploy to Digital Ocean VM via Rsync
         run: |
           echo "Starting rsync deployment"
-          rsync -avz -e "ssh -i ~/.ssh/id_rsa" --delete --exclude='.git/' --exclude='.github/' --exclude='.gitignore' ./ root@178.62.84.97:/var/www/fc/
+          rsync -avz -e "ssh -i ~/.ssh/id_rsa" --exclude='.git/' --exclude='.github/' --exclude='.gitignore' --exclude='SURFACE.md' ./ root@178.62.84.97:/var/www/fc/
 
       # Step 6: Verify deployment
       - name: Verify deployment
