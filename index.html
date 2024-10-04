@@ -1,284 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="followCrom is a DJ turned developer. Get the RanDOM WisDOM Android app, sign up for a word of the week email, contribute to the Momento Contento database, read the latest blog posts, or listen to the MixTape HeavyWeight."
+    />
+    <meta name="theme-color" content="#000" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="followCrom is a DJ turned developer. Get the RanDOM WisDOM Android app, read the latest blog posts, or listen to the MixTape HeavyWeight.">
-  <meta name="theme-color" content="#000">
+    <title>followCrom online</title>
 
-  <title>followCrom.online</title>
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://followcrom.com/" />
 
-  <!-- Canonical Link -->
-  <link rel="canonical" href="https://followcrom.online/">
+    <meta content="followCrom" name="author" />
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favs/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favs/favicon-16x16.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="shortcut icon" href="images/favs/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/favs/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="images/favs/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="images/favs/android-chrome-512x512.png">
+    <meta name="robots" content="index, follow" />
 
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favs/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favs/favicon-16x16.png"
+    />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="shortcut icon" href="images/favs/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/favs/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="images/favs/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="images/favs/android-chrome-512x512.png"
+    />
 
+    <!-- FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&family=Exo+2&family=Changa&family=Slackey&family=Reggae+One&display=swap"
+      rel="stylesheet"
+    />
 
-
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&family=Exo+2&family=Changa&family=Slackey&family=Reggae+One&display=swap"
-    rel="stylesheet">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/main.css">
-  <!-- <link rel="stylesheet" media="(min-width: 1440px)" href="css/xlarge.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- <link rel="stylesheet" media="(min-width: 1440px)" href="css/xlarge.css">
   <link rel="stylesheet" media="(min-width: 1024px) and (max-width: 1439px)" href="css/large.css">
   <link rel="stylesheet" media="(min-width: 640px) and (max-width: 1023px)" href="css/medium.css">
   <link rel="stylesheet" media="(max-width: 639px)" href="css/small.css"> -->
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5879ZFBCXY"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-5879ZFBCXY');
-  </script>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5879ZFBCXY"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-5879ZFBCXY");
+    </script>
 
-  <!-- Social Media Meta Tags -->
-  <meta property="og:title" content="followCrom // DJ turned Developer">
-  <meta property="og:description"
-    content="Looking for a skilled developer for hire? followCrom offers specialized development services to turn your ideas into reality. Contact today for a consultation.">
-  <meta property="og:image" content="https://followcrom.online/images/box_image.jpg">
-  <meta property="og:url" content="https://followcrom.online/">
-  <meta name="twitter:card" content="summary_large_image">
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="followCrom // DJ turned Developer" />
+    <meta
+      property="og:description"
+      content="From spinning records to spinning up servers, followCrom is a DJ turned developer. Get the RanDOM WisDOM Android app, sign up for a word of the week email, contribute to the Momento Contento database, read the latest Medium articles, or listen to the MixTape HeavyWeight."
+    />
+    <meta
+      property="og:image"
+      content="https://followcrom.com/images/box_banner.jpg"
+    />
+    <meta property="og:url" content="https://followcrom.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- JS -->
-  <script src="js/get_time.js" defer></script>
+    <!-- JS -->
+    <script src="js/get_time.js" defer></script>
+  </head>
 
-</head>
-
-
-<body class="main">
-
-  <div class="banner">
-    <h1>followCrom<span class="online">.online</span></h1>
-  </div>
-
-  <div class="vinyl" id="vinyl">
-    <img src="images/vinyl.png" alt="followCrom.online" title="Spinning circuit board vinyl">
-  </div>
-
-
-
-
-  <div class="content">
-    <div class="toptext">
-      <span id="timeGreeting"></span> <i class="fa-solid fa-mug-hot"></i> Welcome to <b>followCrom.online</b>
-      <br><i class="fa-solid fa-compact-disc"></i> DJ turned Developer // Mixing skills
-      <br>👀 Take a look around. 👀
-      <br>
-      <i class="fa-solid fa-handshake"></i><a href="contact/contact.php" class="contact">Get in touch</a>
+  <body class="main">
+    <div class="banner">
+      <h1>followCrom<span class="online"> online</span></h1>
     </div>
 
-
-    <div class="content_box">
-      <h1>
-        <a class="page" href="https://www.mixtape-heavyweight.one">MixTape HeavyWeight</a>
-      </h1>
-      <a href="https://www.mixtape-heavyweight.one"><img class="box_image" src="images/theMixtapeHeavyweight2.png"
-          alt="Mixtape Heavyweight" title="Mixtape Heavyweight"></a>
-      <h3>
-        <li>DJ mix player built in PHP & JavaScript.</li>
-        <li>Web Audio API provides methods and interfaces for audio processing.</li>
-        <li>Canvas API for rendering the audio visualizer.</li>
-        <li>Fetch API for submitting comments and ratings without page reload.</li>
-      </h3>
-      <div class="icon-container">
-        <img class="icon" src="images/icons/javascript.png" alt="JavaScript icon" title="JavaScript icon">
-        <img class="icon" src="images/icons/html.png" alt="HTML 5 icon" title="HTML 5 icon">
-        <img class="icon" src="images/icons/php.png" alt="PHP icon" title="PHP icon">
-        <img class="icon" src="images/icons/api.png" alt="API icon" title="API icon">
-      </div>
+    <div class="vinyl" id="vinyl">
+      <img
+        src="images/vinyl.png"
+        alt="Spinning circuit board vinyl"
+        title="Spinning circuit board vinyl"
+      />
     </div>
 
-
-    <div class="content_box">
-      <h1>
-        <a class="page" href="https://play.google.com/store/apps/details?id=online.followcrom.RandomWisdom">RanDOM
-          WisDOM</a>
-      </h1>
-      <a href="https://play.google.com/store/apps/details?id=online.followcrom.RandomWisdom"><img class="box_image"
-          src="images/random_wisdom.png" alt="Random Wisdom Android app" title="Random Wisdom Android app"></a>
-      <h3>
-        <li>Android app built in Node.js using the React framework.</li>
-        <li>JavaScript implements the functionality.</li>
-        <li>AWS API Gateway routes requests to the server & other AWS services.</li>
-        <li>Released and maintained on the Google Play Store for worldwide distribution.</li>
-      </h3>
-      <div class="icon-container">
-        <i class="fa-brands fa-android" style="color: #3cba54;"></i>
-        <i class="fa-brands fa-square-js" style="color: #F7DF1E;"></i>
-        <i class="fa-brands fa-node-js" style="color: #000;"></i>
-        <i class="fa-brands fa-aws" style="color: #FF9900;"></i>
-        <i class="fa-brands fa-google-play" style="color: #006afe;"></i>
-      </div>
-    </div>
-
-
-    <div class="content_box">
-      <h1>
-        <a class="page" href="https://medium.com/@followcrom/do-the-data-dance-934fd7bb8738">Do the Data Dance?</a>
-      </h1>
-      <a href="https://medium.com/@followcrom/do-the-data-dance-934fd7bb8738"><img class="box_image"
-          src="images/data_dance.png" alt="Matrix-style data dancing" title="Matrix-style data dancing"></a>
-      <h3>
-        <li>A two-part analysis of Spotify's popularity algorithm.</li>
-        <li>EDA on a 550k+ row dataset, using Python with Pandas for data cleaning and analysis.</li>
-        <li>Matplotlib, Seaborn and Plotly for visualization.</li>
-        <li>Narrative blog post on Medium.</li>
-      </h3>
-      <div class="icon-container">
-        <i class="fa-brands fa-python" style="color: blue;"></i>
-        <i class="fa-solid fa-magnifying-glass-chart" style="color: palevioletred;"></i>
-        <i class="fa-solid fa-ranking-star" style="color: orange;"></i>
-        <i class="fa-brands fa-spotify" style="color: green;"></i>
-        <i class="fa-brands fa-medium" style="color: black;"></i>
+    <div class="content">
+      <div class="toptext">
+        <span id="timeGreeting"></span>
+        <i class="fa-solid fa-mug-hot"></i> Welcome to <b>followCrom.com</b>
+        <br /><i class="fa-solid fa-compact-disc"></i> I'm a DJ turned Developer
+        // Mixing skills <br />👀 Take a look around. 👀
+        <br />
+        <i class="fa-solid fa-handshake"></i
+        ><a href="contact/contact.php" class="contact">Get in touch</a>
       </div>
 
-      <!-- <div class="icon-container">
+      <div class="content_box">
+        <h1>
+          <a class="page" href="https://www.mixtape-heavyweight.one"
+            >MixTape HeavyWeight</a
+          >
+        </h1>
+        <a href="https://www.mixtape-heavyweight.one"
+          ><img
+            class="box_image"
+            src="images/theMixtapeHeavyweight2.png"
+            alt="Mixtape Heavyweight"
+            title="Mixtape Heavyweight"
+        /></a>
+        <h3>
+          <li>DJ mix player built with PHP & JavaScript.</li>
+          <li>
+            Web Audio API provides methods and interfaces for audio processing.
+          </li>
+          <li>Canvas API for rendering the audio visualizer.</li>
+          <li>
+            Fetch API for submitting comments and ratings without page reload.
+          </li>
+        </h3>
+        <div class="icon-container">
+          <img
+            class="icon"
+            src="images/icons/javascript.png"
+            alt="JavaScript icon"
+            title="JavaScript icon"
+          />
+          <img
+            class="icon"
+            src="images/icons/html.png"
+            alt="HTML 5 icon"
+            title="HTML 5 icon"
+          />
+          <img
+            class="icon"
+            src="images/icons/php.png"
+            alt="PHP icon"
+            title="PHP icon"
+          />
+          <img
+            class="icon"
+            src="images/icons/api.png"
+            alt="API icon"
+            title="API icon"
+          />
+          <img
+            class="icon"
+            src="images/icons/python.png"
+            alt="Python icon"
+            title="Python icon"
+          />
+        </div>
+      </div>
+
+      <div class="content_box">
+        <h1>
+          <a class="page" href="https://ttt.followcrom.com/"
+            >Top Track Tracker</a
+          >
+        </h1>
+        <a href="https://ttt.followcrom.com/"
+          ><img
+            class="box_image"
+            src="images/smash_mob.png"
+            alt="Mixtape Heavyweight"
+            title="Mixtape Heavyweight"
+        /></a>
+        <h3>
+          <li>
+            Django web app connects to the Spotify API to retrieve user data and
+            track information.
+          </li>
+          <li>Get a user's top tracks across different time periods.</li>
+          <li>
+            Add selected tracks to the Top Track Tracker playlist & export it to
+            a CSV file.
+          </li>
+          <li>Hosted on a Digital Ocean Linux server.</li>
+        </h3>
+        <div class="icon-container">
+          <i class="fa-brands fa-spotify" style="color: green"></i>
+          <i class="fa-brands fa-python" style="color: #306998"></i>
+          <i class="fa-solid fa-arrow-up-right-dots" style="color: #ff9900"></i>
+          <i class="fa-solid fa-file-csv" style="color: #28a745"></i>
+          <i class="fa-brands fa-digital-ocean" style="color: #006deb"></i>
+          <i class="fa-brands fa-linux" style="color: #333333"></i>
+        </div>
+      </div>
+      <div class="content_box">
+        <h1>
+          <a
+            class="page"
+            href="https://play.google.com/store/apps/details?id=online.followcrom.RandomWisdom"
+            >RanDOM WisDOM</a
+          >
+        </h1>
+        <a
+          href="https://play.google.com/store/apps/details?id=online.followcrom.RandomWisdom"
+          ><img
+            class="box_image"
+            src="images/random_wisdom.png"
+            alt="Random Wisdom Android app"
+            title="Random Wisdom Android app"
+        /></a>
+        <h3>
+          <li>Android app built in Node.js using the React framework.</li>
+          <li>JavaScript implements the functionality.</li>
+          <li>
+            AWS API Gateway routes requests to the server & other AWS services.
+          </li>
+          <li>
+            Released and maintained on the Google Play Store for worldwide
+            distribution.
+          </li>
+        </h3>
+        <div class="icon-container">
+          <i class="fa-brands fa-android" style="color: #3cba54"></i>
+          <i class="fa-brands fa-square-js" style="color: #f7df1e"></i>
+          <i class="fa-brands fa-node-js" style="color: #000"></i>
+          <i class="fa-brands fa-aws" style="color: #ff9900"></i>
+          <i class="fa-brands fa-google-play" style="color: #006afe"></i>
+        </div>
+      </div>
+
+      <div class="content_box">
+        <h1>
+          <a class="page" href="wotd/">Word of the Week</a>
+        </h1>
+        <a href="wotd/"
+          ><img
+            class="box_image"
+            src="images/wordOftheDay2.png"
+            alt="Mail man on a hover board"
+            title="Mail man on a hover board"
+        /></a>
+        <h3>
+          <li>
+            Python script selects the 'Word of the Week' from a curated list.
+          </li>
+          <li>smtplib and MIMEText in Python format the emails.</li>
+          <li>
+            GitHub Actions schedule and automate the script's weekly execution.
+          </li>
+          <li>PHP for secure user signup and email validation.</li>
+        </h3>
+        <div class="icon-container">
+          <i class="fa-brands fa-python" style="color: #3776ab"></i>
+          <i class="fa-brands fa-github" style="color: #000"></i>
+          <i class="fa-brands fa-php" style="color: #777bb4"></i>
+          <i class="fa-solid fa-envelope" style="color: #fff"></i>
+        </div>
+      </div>
+
+      <div class="content_box">
+        <h1>
+          <a class="page" href="/momcon/">Momento Contento</a>
+        </h1>
+        <a href="/momcon/"
+          ><img
+            class="box_image"
+            src="images/djrr.jpg"
+            alt="Momento Contento web app"
+            title="Momento Contento web app"
+        /></a>
+        <h3>
+          <li>Web app built using the Flask framework for Python.</li>
+          <li>Front-end U.I designed built with HTML, CSS, and JavaScript.</li>
+          <li>
+            Connects to a MySQL database on the back-end to store and retrieve
+            data.
+          </li>
+          <li>
+            Users can contribute to the database using the web app's form.
+          </li>
+        </h3>
+        <div class="icon-container">
+          <img
+            class="icon"
+            src="images/icons/flask.png"
+            alt="Flask icon"
+            title="Flask icon"
+          />
+          <img
+            class="icon"
+            src="images/icons/python.png"
+            alt="Python icon"
+            title="Python icon"
+          />
+          <img
+            class="icon"
+            src="images/icons/mysql.png"
+            alt="MySQL icon"
+            title="MySQL icon"
+          />
+          <img
+            class="icon"
+            src="images/icons/javascript.png"
+            alt="JavaScript icon"
+            title="JavaScript icon"
+          />
+          <img
+            class="icon"
+            src="images/icons/aws.png"
+            alt="AWS icon"
+            title="AWS icon"
+          />
+        </div>
+      </div>
+
+      <div class="content_box">
+        <h1>
+          <a
+            class="page"
+            href="https://medium.com/@followcrom/do-the-data-dance-934fd7bb8738"
+            >Do the Data Dance?</a
+          >
+        </h1>
+        <a href="https://medium.com/@followcrom/do-the-data-dance-934fd7bb8738"
+          ><img
+            class="box_image"
+            src="images/data_dance.png"
+            alt="Matrix-style data dancing"
+            title="Matrix-style data dancing"
+        /></a>
+        <h3>
+          <li>A two-part analysis of Spotify's popularity algorithm.</li>
+          <li>
+            EDA on a 550k+ row dataset, using Python with Pandas for data
+            cleaning and analysis.
+          </li>
+          <li>Matplotlib, Seaborn and Plotly for visualization.</li>
+          <li>Narrative blog post on Medium.</li>
+        </h3>
+        <div class="icon-container">
+          <i class="fa-brands fa-python" style="color: blue"></i>
+          <i
+            class="fa-solid fa-magnifying-glass-chart"
+            style="color: palevioletred"
+          ></i>
+          <i class="fa-solid fa-ranking-star" style="color: orange"></i>
+          <i class="fa-brands fa-spotify" style="color: green"></i>
+          <i class="fa-brands fa-medium" style="color: black"></i>
+        </div>
+
+        <!-- <div class="icon-container">
         <img class="icon" src="images/icons/python.png" alt="Python icon" title="Python icon">
         <img class="icon" src="images/icons/atom.png" alt="Atom icon" title="Atom icon">
         <img class="icon" src="images/icons/graph.png" alt="Graph icon" title="Graph icon">
       </div> -->
-    </div>
+      </div>
 
+      <div class="content_box">
+        <h1>
+          <a class="page" href="w2w/words.html">Words to the Wise</a>
+        </h1>
+        <a href="w2w/words.html"
+          ><img
+            class="box_image"
+            src="images/w2w.png"
+            alt="A wise old owl delivering words of wisdom to their owlets"
+            title="A wise old owl delivering words of wisdom to their owlets"
+        /></a>
+        <h3>
+          <li>
+            20 years of collected quotations and philosophical meanderings
+            through space-time.
+          </li>
+          <li>
+            The original version of the site, written in HTML, CSS and
+            JavaScript.
+          </li>
+          <li>
+            Teed Breezy accounts on some of the earliest social media platforms.
+          </li>
+          <li>
+            Originally updated manually, now fully automated with Python
+            subprocesses.
+          </li>
+        </h3>
+        <div class="icon-container">
+          <i class="fa-solid fa-book" style="color: green"></i>
+          <i class="fa-brands fa-html5" style="color: #e34f26"></i>
+          <i class="fa-brands fa-css3" style="color: #1572b6"></i>
+          <i class="fa-brands fa-python" style="color: palevioletred"></i>
+        </div>
+      </div>
 
-    <div class="content_box">
-      <h1>
-        <a class="page" href="wotd/">Word of the
-          Week</a>
-      </h1>
-      <a href="wotd/"><img class="box_image" src="images/wordOftheDay2.png" alt="Mail man on a hover board"
-          title="Mail man on a hover board"></a>
-      <h3>
-        <li>Python script selects the 'Word of the Week' from a curated list.</li>
-        <li>smtplib and MIMEText in Python format the emails.</li>
-        <li>GitHub Actions schedule and automate the script's weekly execution.</li>
-        <li>PHP for secure user signup and email validation.</li>
-      </h3>
-      <div class="icon-container">
-        <i class="fa-brands fa-python" style="color: #3776AB;"></i>
-        <i class="fa-brands fa-github" style="color: #000;"></i>
-        <i class="fa-brands fa-php" style="color: #777BB4;"></i>
-        <i class="fa-solid fa-envelope" style="color: #fff;"></i>
+      <div class="content_box">
+        <h1>
+          <a
+            class="page"
+            href="https://medium.com/@followcrom/vinyl-grooves-to-digital-waves-fe0b8a683101"
+            >On the Record</a
+          >
+        </h1>
+        <a
+          href="https://medium.com/@followcrom/vinyl-grooves-to-digital-waves-fe0b8a683101"
+          ><img
+            class="box_image"
+            src="images/gramophone-dj.png"
+            alt="Old-skool DJ spinning on two gramophones"
+            title="Old-skool DJ spinning on two gramophones"
+        /></a>
+        <h3>
+          <li>
+            This article is a brief history (& pre-history) of recorded sound.
+          </li>
+          <li>Learn how changing audio formats shaped DJing.</li>
+          <li>
+            Ownership vs subscription: the trade-offs of using a DSP for a DJ.
+          </li>
+          <li>Read the full article on Medium.</li>
+        </h3>
+        <div class="icon-container">
+          <i class="fa-brands fa-medium" style="color: white"></i>
+          <i class="fa-solid fa-record-vinyl" style="color: black"></i>
+          <i class="fa-solid fa-radio" style="color: orchid"></i>
+          <i class="fa-brands fa-spotify" style="color: green"></i>
+        </div>
+      </div>
+
+      <div class="content_box">
+        <h1>
+          <a class="page" href="adom_splitter/random_wisdom.php"
+            >Adom Splitter</a
+          >
+        </h1>
+        <a href="adom_splitter/random_wisdom.php"
+          ><img
+            class="box_image"
+            src="images/domdom_php.png"
+            alt="A person mediating while fireworks light the sky"
+            title="A person mediating while fireworks light the sky"
+        /></a>
+        <h3>
+          <li>
+            An early version of domdom that uses PHP explode() to get a quote
+            from a text list.
+          </li>
+          <li>A simple JavaScript function refreshes the page.</li>
+          <li>
+            Responsive CSS ensures a good user experience across screen sizes.
+          </li>
+          <li>CSS animations make the page more engaging.</li>
+          <li>Philosophical insights at the click of a button.</li>
+        </h3>
+        <div class="icon-container">
+          <i class="fa-brands fa-php" style="color: #787cb5"></i>
+          <i class="fa-solid fa-book" style="color: black"></i>
+          <i class="fa-brands fa-html5" style="color: orange"></i>
+          <i class="fa-brands fa-css3" style="color: #006afe"></i>
+        </div>
+      </div>
+
+      <div class="content_box">
+        <h1>
+          <a class="page" href="contact/contact.php">Get in Touch</a>
+        </h1>
+        <a href="contact/contact.php"
+          ><img
+            class="box_image"
+            src="images/contact_2.png"
+            alt="Get in touch"
+            title="Get in touch"
+        /></a>
+        <h3>
+          I am always looking for new challenges and opportunities to grow as a
+          developer. Please don't hesitate to get in touch if you have a project
+          that you'd like to discuss.
+          <br />
+          <li><a class="page" href="contact/contact.php">Contact form</a></li>
+          <li>
+            <a class="page" href="https://linkedin.com/in/followCrom"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a class="page" href="https://github.com/followcrom">GitHub</a>
+          </li>
+        </h3>
       </div>
     </div>
 
-
-
-    <!-- <div class="content_box">
-      <h1>
-        <a class="page" href="https://djexperience.co.uk/">DJ eXperience</a>
-      </h1>
-      <a href="https://djexperience.co.uk/"><img class="box_image" src="images/djx.jpg" alt="DJ Experience"
-          title="DJ Experience"></a>
-      <h3>
-        <li>Learn to DJ in a fun & educational way.</li>
-        <li>DJ workshops train students to use state-of-the-art DJ tools.</li>
-        <li>With a DJX Party, don't book a DJ for your event - be the DJ!</li>
-        <li>Chart-topping record producers teach students how to use DAWs.</li>
-      </h3>
-      <div class="icon-container">
-        <i class="fa-solid fa-headphones-simple" style="color: blue;"></i>
-        <i class="fa-solid fa-sliders" style="color: #000;"></i>
-        <i class="fa-regular fa-file-audio" style="color: orange;"></i>
-        <i class="fa-solid fa-record-vinyl" style="color: green;"></i>
-        <i class="fa-brands fa-mixcloud" style="color: palevioletred;"></i>
-      </div>
-      <div class="icon-container">
-        <img class="icon" src="images/icons/dj.png" alt="DJ icon" title="DJ icon">
-        <img class="icon" src="images/icons/logic.png" alt="Logic Pro icon" title="Logic Pro icon">
-        <img class="icon" src="images/icons/ableton.png" alt="Ableton Live icon" title="Ableton Live icon">
-      </div>
-    </div> -->
-
-
-
-    <div class="content_box">
-      <h1>
-        <a class="page" href="https://medium.com/@followcrom/vinyl-grooves-to-digital-waves-fe0b8a683101">On the
-          Record</a>
-      </h1>
-      <a href="https://medium.com/@followcrom/vinyl-grooves-to-digital-waves-fe0b8a683101"><img class="box_image"
-          src="images/gramophone-dj.png" alt="Old-skool DJ spinning on two gramophones"
-          title="Old-skool DJ spinning on two gramophones"></a>
-      <h3>
-        <li>This article is a brief history (& pre-history) of recorded sound.</li>
-        <li>Learn how changing audio formats shaped DJing.</li>
-        <li>Ownership vs subscription: the trade-offs of using a DSP for a DJ.</li>
-        <li>Read the full article on Medium.</li>
-      </h3>
-      <div class="icon-container">
-        <i class="fa-brands fa-medium" style="color: white;"></i>
-        <i class="fa-solid fa-record-vinyl" style="color: black;"></i>
-        <i class="fa-solid fa-radio" style="color: orchid;"></i>
-        <i class="fa-brands fa-spotify" style="color: green;"></i>
-      </div>
-    </div>
-
-
-    <div class="content_box">
-      <h1>
-        <a class="page" href="https://github.com/followcrom/RanDomWisDom">Momento Contento</a>
-      </h1>
-      <a href="https://github.com/followcrom/RanDomWisDom"><img class="box_image" src="images/djrr.jpg"
-          alt="Momento Contento web app" title="Momento Contento web app"></a>
-      <h3>
-        <li>Web app built using the Flask framework for Python.</li>
-        <li>Front-end U.I designed using HTML/CSS, JavaScript.</li>
-        <li>Connects to a MySQL database on the back-end to store and retrieve data.</li>
-        <li>Deployed to an AWS EC2 environment for hosting and accessibility.</li>
-      </h3>
-      <div class="icon-container">
-        <img class="icon" src="images/icons/flask.png" alt="Flask icon" title="Flask icon">
-        <img class="icon" src="images/icons/python.png" alt="Python icon" title="Python icon">
-        <img class="icon" src="images/icons/mysql.png" alt="MySQL icon" title="MySQL icon">
-        <img class="icon" src="images/icons/javascript.png" alt="JavaScript icon" title="JavaScript icon">
-        <img class="icon" src="images/icons/aws.png" alt="AWS icon" title="AWS icon">
-      </div>
-    </div>
-
-
-    <div class="content_box">
-      <h1>
-        <a class="page" href="contact/contact.php">Get in Touch</a>
-      </h1>
-      <a href="contact/contact.php"><img class="box_image" src="images/contact_2.png" alt="Get in touch"
-          title="Get in touch"></a>
-      <h3>
-        I am always looking for new challenges and opportunities to grow as a developer. Please don't
-        hesitate to get in touch if you have a project that you'd like to discuss.
-        <br>
-        <li><a class="page" href="contact/contact.php">Contact form</a></li>
-        <li><a class="page" href="https://linkedin.com/in/followCrom">LinkedIn</a></li>
-        <li><a class="page" href="https://github.com/followcrom">GitHub</a></li>
-      </h3>
-    </div>
-
-
-  </div>
-
-
-  <script src="js/rotation.js"></script>
-</body>
-
+    <script src="js/rotation.js"></script>
+  </body>
 </html>

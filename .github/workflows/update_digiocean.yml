@@ -1,4 +1,4 @@
-name: Deploy Website to D.O.
+name: Deploy Website to Digital Ocean
 
 on:
   push:
@@ -14,18 +14,28 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # Step 2: Set up SSH agent and add SSH key from GitHub Secrets
-      - name: Setup SSH key
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      # Step 2: Install rsync
+      - name: Install rsync
+        run: sudo apt-get update && sudo apt-get install -y rsync
 
-      # Step 3: Install Rsync
-      - name: Install Rsync
-        run: sudo apt-get install -y rsync
+      # Step 3: Set up SSH key
+      - name: Set up SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 178.62.84.97 >> ~/.ssh/known_hosts
 
-      # Step 4: Rsync the website to the Digital Ocean VM
-      - name: Deploy to Digital Ocean via Rsync
+      # Step 4: Debug SSH connection
+      - name: Debug SSH connection
+        run: ssh -v -i ~/.ssh/id_rsa root@178.62.84.97 "echo SSH connection successful"
+
+      # Step 5: Deploy using rsync
+      - name: Deploy to Digital Ocean VM via Rsync
         run: |
           echo "Starting rsync deployment"
-          rsync -avz --delete --exclude='.git/' --exclude='.github/' --exclude='.gitignore' ./ root@178.62.84.97:/var/www/fc/
+          rsync -avz -e "ssh -i ~/.ssh/id_rsa" --exclude='.git/' --exclude='.github/' --exclude='.gitignore' --exclude='SURFACE.md' ./ root@178.62.84.97:/var/www/fc/
+
+      # Step 6: Verify deployment
+      - name: Verify deployment
+        run: ssh -i ~/.ssh/id_rsa root@178.62.84.97 "ls -la /var/www/fc/"
