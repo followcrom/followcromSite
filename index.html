@@ -102,6 +102,80 @@
 
     <!-- JS -->
     <script src="js/get_time.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://followcrom.com/#website",
+            "url": "https://followcrom.com/",
+            "name": "followCrom online",
+            "description": "followCrom is a DJ turned developer. Get the RanDOM WisDOM Android app, sign up for a word of the week email, contribute to the Momento Contento database, read the latest blog posts, or listen to the MixTape HeavyWeight.",
+            "potentialAction": [
+              {
+                "@type": "SearchAction",
+                "target": "https://followcrom.com/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://followcrom.com/#person",
+            "name": "followCrom",
+            "jobTitle": "DJ turned Developer",
+            "description": "From spinning records to spinning up servers, followCrom is a DJ turned developer.",
+            "sameAs": [
+              "https://linkedin.com/in/followCrom",
+              "https://github.com/followcrom",
+              "https://medium.com/@followcrom"
+            ],
+            "url": "https://followcrom.com/"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://followcrom.com/#webpage",
+            "url": "https://followcrom.com/",
+            "name": "followCrom online",
+            "isPartOf": { "@id": "https://followcrom.com/#website" },
+            "about": { "@id": "https://followcrom.com/#person" },
+            "description": "followCrom is a DJ turned developer. Get the RanDOM WisDOM Android app, sign up for a word of the week email, contribute to the Momento Contento database, read the latest blog posts, or listen to the MixTape HeavyWeight."
+          },
+          {
+            "@type": "SoftwareApplication",
+            "name": "RanDOM WisDOM",
+            "operatingSystem": "Android",
+            "applicationCategory": "UtilitiesApplication",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD"
+            },
+            "url": "https://play.google.com/store/apps/details?id=online.followcrom.RandomWisdom"
+          },
+          {
+            "@type": "WebApplication",
+            "name": "MixTape HeavyWeight",
+            "url": "https://www.mixtape-heavyweight.one",
+            "description": "DJ mix player built with PHP & JavaScript, featuring Web Audio API and Canvas API."
+          },
+          {
+            "@type": "WebApplication",
+            "name": "Top Track Tracker",
+            "url": "https://ttt.followcrom.com/",
+            "description": "Django web app that connects to the Spotify API to retrieve user data and track information."
+          },
+          {
+            "@type": "WebApplication",
+            "name": "Momento Contento",
+            "url": "https://followcrom.com/momcon/",
+            "description": "Web app built using the Flask framework for Python, connecting to a MySQL database."
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body class="main">
@@ -402,9 +476,7 @@
             The original version of the site, written in HTML, CSS and
             JavaScript.
           </li>
-          <li>
-            Teed Breezy accounts on some of the earliest social media platforms.
-          </li>
+          <li>Accounts on some of the earliest social media platforms.</li>
           <li>
             Originally updated manually, now fully automated with Python
             subprocesses.
@@ -470,7 +542,6 @@
             An early version of domdom that uses PHP explode() to get a quote
             from a text list.
           </li>
-          <li>A simple JavaScript function refreshes the page.</li>
           <li>
             Responsive CSS ensures a good user experience across screen sizes.
           </li>

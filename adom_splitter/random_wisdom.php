@@ -20,6 +20,8 @@
   <meta name="robots" content="index, follow" />
   <meta name="googlebot" content="index, follow" />
 
+  <link rel="canonical" href="https://followcrom.com/adom_splitter/random_wisdom.php" />
+
   <!-- <script type="text/javascript" language="JavaScript" src="js/analytics.js"></script> -->
 
 

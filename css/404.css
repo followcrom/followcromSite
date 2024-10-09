@@ -41,7 +41,7 @@ h1 {
 }
 
 h3 {
-  width: 90%;
+  width: 80%;
   margin: auto;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-weight: normal;
@@ -67,8 +67,7 @@ a.page:hover {
 }
 
 a.page:visited {
-  color: gold;
-  text-align: left;
+  color: #85cdff;
   cursor: pointer;
 }
 
@@ -99,7 +98,6 @@ a.page:visited {
   }
 
   h3 {
-    width: 80%;
     font-size: 3vw;
   }
 }
@@ -120,7 +118,6 @@ a.page:visited {
   }
 
   h3 {
-    width: 80%;
     margin: auto;
     font-size: 4vw;
     padding-bottom: 5px;
