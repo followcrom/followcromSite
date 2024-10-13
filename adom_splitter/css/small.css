@@ -267,7 +267,7 @@ input[type="submit"]:hover {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 25% 25%;
+  grid-template-columns: 10% 10% 10% 10% 10%;
   justify-content: center;
   gap: 1em;
   padding: 10px;
