@@ -12,7 +12,7 @@
   background-color: #fff;
 }
 
-.top_banner {
+/* .top_banner {
   padding: 10px;
 }
 
@@ -30,7 +30,7 @@
   -moz-animation: enticing 5s ease infinite;
   animation: enticing 5s ease infinite;
   -webkit-background-clip: text;
-}
+} */
 
 @keyframes enticing {
   0% {
@@ -271,7 +271,7 @@ input[type="submit"]:hover {
   justify-content: center;
   gap: 1em;
   padding: 10px;
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
 }
 
 .grid-item {
