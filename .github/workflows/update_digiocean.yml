@@ -31,10 +31,11 @@ jobs:
         run: ssh -v -i ~/.ssh/id_rsa root@178.62.84.97 "echo SSH connection successful"
 
       # Step 5: Deploy using rsync
+      # Adding the --checksum flag (-c) will ensure that rsync only transfers files whose content has changed.
       - name: Deploy to Digital Ocean VM via Rsync
         run: |
           echo "Starting rsync deployment"
-          rsync -avzu -e "ssh -i ~/.ssh/id_rsa" --exclude='.git/' --exclude='.github/' --exclude='.gitignore' --exclude='README.md' ./ root@178.62.84.97:/var/www/fc/
+          rsync -avzuc -e "ssh -i ~/.ssh/id_rsa" --exclude='.git/' --exclude='.github/' --exclude='.gitignore' --exclude='README.md' ./ root@178.62.84.97:/var/www/fc/
 
       # Step 6: Verify deployment
       - name: Verify deployment
