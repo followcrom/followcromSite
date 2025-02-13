@@ -2,9 +2,9 @@
 
 ## 📅 Commit Activity 🕹️
 
-![GitHub last commit](https://img.shields.io/github/last-commit/followcrom/medel)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/followcrom/medel)
-![GitHub repo size](https://img.shields.io/github/repo-size/followcrom/medel)
+![GitHub last commit](https://img.shields.io/github/last-commit/followcrom/followcromSite)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/followcrom/followcromSite)
+![GitHub repo size](https://img.shields.io/github/repo-size/followcrom/followcromSite)
 
 ## ✍ Authors 
 
