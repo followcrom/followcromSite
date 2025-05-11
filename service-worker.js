@@ -1,53 +1,78 @@
-const CACHE_NAME = 'v2'; // Use a variable for the cache name
-const resourcesToCache = [
+const CACHE_NAME = 'followcrom-v3';
+const PRECACHE_ASSETS = [
   '/',
   '/index.html',
   '/css/main.css',
-  // Add other resources you want to cache
+  '/offline.html'
+  // Add more static assets as needed
 ];
 
+// Install event – Pre-cache critical assets
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(resourcesToCache);
+      return cache.addAll(PRECACHE_ASSETS);
     }).catch((err) => {
-      console.error('Error during service worker installation:', err);
+      console.error('Error during installation:', err);
     })
   );
 });
 
+// Activate event – Cleanup old caches
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(
+        keys.map((key) => {
+          if (key !== CACHE_NAME) {
+            console.log(`Deleting old cache: ${key}`);
+            return caches.delete(key);
+          }
+        })
+      )
+    )
+  );
+  event.waitUntil(self.clients.claim());
+});
+
+// Fetch event – Cache-first with network fallback + redirect fix + offline fallback
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
-        console.log('Found in cache:', event.request.url);
-        return cachedResponse; // Return the cached response if found
+        console.log('Serving from cache:', event.request.url);
+        return cachedResponse;
       }
-      // If not found in cache, fetch from network
-      return fetch(event.request);
+
+      return fetch(event.request).then((networkResponse) => {
+        // Follow redirects safely
+        if (networkResponse && networkResponse.redirected) {
+          return fetch(networkResponse.url);
+        }
+
+        // Clone and cache the response if it's valid
+        if (
+          networkResponse &&
+          networkResponse.status === 200 &&
+          networkResponse.type === 'basic'
+        ) {
+          const responseClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseClone);
+          });
+        }
+
+        return networkResponse;
+      });
     }).catch((err) => {
-      console.error('Error fetching resource:', err);
-      return fetch(event.request); // Fallback to network if cache fails
+      console.warn('Fetch failed; returning offline fallback:', err);
+
+      // Return offline fallback for navigations (e.g., full page requests)
+      if (event.request.mode === 'navigate') {
+        return caches.match('/offline.html');
+      }
+
+      // Could also return fallback images or other resource types if desired
     })
   );
-});
-
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((keyList) => {
-      return Promise.all(
-        keyList.map((key) => {
-          if (key !== CACHE_NAME) {
-            console.log(`Deleting old cache: ${key}`);
-            return caches.delete(key); // Delete old caches
-          }
-        })
-      );
-    }).catch((err) => {
-      console.error('Error cleaning old caches:', err);
-    })
-  );
-
-  // Take control of the clients immediately
-  event.waitUntil(self.clients.claim());
 });
