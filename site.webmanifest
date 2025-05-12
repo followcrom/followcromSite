@@ -1,6 +1,8 @@
 {
   "short_name": "followCrom",
   "name": "followCrom.com",
+  "description": "followCrom's website",
+  "lang": "en",
   "categories": [
     "coding",
     "web development",
@@ -10,6 +12,12 @@
     "writing"
   ],
   "author": "Cromwell D. Monmoth",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "images/favs/favicon-16x16.png",
@@ -18,7 +26,7 @@
     },
     {
       "src": "images/favs/favicon-32x32.png",
-      "sizes": "36x36",
+      "sizes": "32x32",
       "type": "image/png"
     },
     {
@@ -31,10 +39,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "start_url": "/",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#85cdff",
-  "description": "followCrom's website"
+  ]
 }

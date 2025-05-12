@@ -1,0 +1,125 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  margin: 0px;
+  background-color: #000;
+}
+
+.banner {
+  padding: 0px;
+  color: #85cdff;
+  text-align: center;
+  font-family: "Exo 2", sans-serif;
+  font-size: 6vw;
+  margin: 0px;
+}
+
+.banner .online {
+  display: inline;
+  font-family: "Reggae One", sans-serif;
+  color: aquamarine;
+}
+
+.container {
+  text-align: center;
+}
+
+.image img {
+  width: 40vw;
+  padding: 10px;
+}
+
+h1 {
+  font-family: Verdana;
+  font-size: 3vw;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 10px;
+  margin: 0px;
+}
+
+h3 {
+  width: 80%;
+  margin: auto;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 2vw;
+  text-align: center;
+  color: grey;
+  padding-bottom: 10px;
+}
+
+a.page:link {
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 2.5vm;
+  color: #85cdff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a.page:hover {
+  color: gold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a.page:visited {
+  color: #85cdff;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 2500px) {
+  .image img {
+    width: 25vw;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 3vw;
+  }
+
+  h3 {
+    width: 50%;
+    font-size: 2vw;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .banner {
+    font-size: 8vw;
+  }
+
+  h1 {
+    font-size: 4vw;
+    margin: 0px;
+  }
+
+  h3 {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 639px) {
+  .banner {
+    font-size: 8vw;
+  }
+
+  .image img {
+    width: 60vw;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 5vw;
+    padding: 10px;
+  }
+
+  h3 {
+    margin: auto;
+    font-size: 4vw;
+    padding-bottom: 5px;
+  }
+}
