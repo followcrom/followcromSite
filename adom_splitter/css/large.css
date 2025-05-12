@@ -9,7 +9,7 @@
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 0px;
-  background-color: #fff;
+  background-color: #000;
 }
 
 /* .top_banner {
@@ -91,18 +91,14 @@
 }
 
 .top_bar {
-  background: linear-gradient(260deg, #006afe, beige, #85cdff, pink, green);
-  background-size: 200% 200%;
-  animation-direction: reverse;
-  -webkit-animation: enticing 5s ease infinite;
-  -moz-animation: enticing 5s ease infinite;
-  animation: enticing 5s ease infinite;
+  background-color: black;
   padding: 5px;
   font-family: Verdana, sans-serif;
   text-align: center;
   font-size: 1.4em;
   color: #fff;
   clear: left;
+  border-bottom: #000 solid 5px;
 }
 
 .grid-container-banner {

@@ -1,174 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <title>followCrom - Word of the Week</title>
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="css/nav-bar.css" />
+    <link rel="stylesheet" href="css/nav-bar.css">
 
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css">
 
-    <link rel="canonical" href="https://followcrom.com/wotd/books_list.html" />
 
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="../images/favs/favicon.ico" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../images/favs/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="../images/favs/favicon-16x16.png"
-    />
-    <link rel="manifest" href="site.webmanifest" />
-    <link rel="shortcut icon" href="images/favs/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../images/favs/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="../images/favs/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="../images/favs/android-chrome-512x512.png"
-    />
+    <link rel="shortcut icon" href="/fc/images/favs/favicon.ico">
 
     <!-- FontAwesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway&family=Roboto+Mono&display=swap"
+        rel="stylesheet">
 
-  <body>
+</head>
+
+<body>
+
     <script src="js/rollovers.js"></script>
 
     <div class="icon_row">
-      <div class="grid-container">
-        <div
-          class="grid-item"
-          onmouseover="showHiddenText(this, 'online')"
-          onmouseout="hideHiddenText(this)"
-        >
-          <a class="footer" href="../index.html"
-            ><img
-              class="icon"
-              src="images/icons/home-2.png"
-              alt="follow Crom home"
-              title="follow Crom home"
-          /></a>
-        </div>
+        <div class="grid-container">
 
-        <div
-          class="grid-item"
-          onmouseover="showHiddenText(this, 'on LinkedIn')"
-          onmouseout="hideHiddenText(this)"
-        >
-          <a
-            class="footer"
-            href="https://linkedin.com/in/followCrom"
-            target="_blank"
-            ><img
-              class="icon"
-              src="../contact/images/icons/linkedin.png"
-              alt="follow Crom on Linked In"
-              title="follow Crom on Linked In"
-          /></a>
-        </div>
+            <div class="grid-item" onmouseover="showHiddenText(this, 'online')" onmouseout="hideHiddenText(this)">
+                <a class="footer" href="../index.html"><img class="icon" src="images/icons/home-2.png"
+                        alt="follow Crom home" title="follow Crom home"></a>
+            </div>
 
-        <div
-          class="grid-item"
-          onmouseover="showHiddenText(this, 'on GitHub')"
-          onmouseout="hideHiddenText(this)"
-        >
-          <a class="footer" href="https://github.com/followcrom" target="_blank"
-            ><img
-              class="icon"
-              src="../contact/images/icons/github.png"
-              alt="follow Crom on Git Hub"
-              title="follow Crom on Git Hub"
-          /></a>
-        </div>
+            <div class="grid-item" onmouseover="showHiddenText(this, 'on LinkedIn')" onmouseout="hideHiddenText(this)">
+                <a class="footer" href="https://linkedin.com/in/followCrom" target="_blank"><img class="icon"
+                        src="../contact/images/icons/linkedin.png" alt="follow Crom on Linked In"
+                        title="follow Crom on Linked In"></a>
+            </div>
 
-        <div
-          class="grid-item"
-          onmouseover="showHiddenText(this, 'on Medium')"
-          onmouseout="hideHiddenText(this)"
-        >
-          <a
-            class="footer"
-            href="https://medium.com/@followcrom"
-            target="_blank"
-            ><img
-              class="icon"
-              src="../contact/images/icons/medium.png"
-              alt="follow Crom on Medium"
-              title="follow Crom on Medium"
-          /></a>
-        </div>
+            <div class="grid-item" onmouseover="showHiddenText(this, 'on GitHub')" onmouseout="hideHiddenText(this)">
+                <a class="footer" href="https://github.com/followcrom" target="_blank"><img class="icon"
+                        src="../contact/images/icons/github.png" alt="follow Crom on Git Hub"
+                        title="follow Crom on Git Hub"></a>
+            </div>
 
-        <div
-          class="grid-item"
-          onmouseover="showHiddenText(this, 'contact')"
-          onmouseout="hideHiddenText(this)"
-        >
-          <a class="footer" href="../contact/contact.php"
-            ><img
-              class="icon"
-              src="images/icons/contact-us.png"
-              alt="Contact"
-              title="Contact"
-          /></a>
+            <div class="grid-item" onmouseover="showHiddenText(this, 'on Medium')" onmouseout="hideHiddenText(this)">
+                <a class="footer" href="https://medium.com/@followcrom" target="_blank"><img class="icon"
+                        src="../contact/images/icons/medium.png" alt="follow Crom on Medium"
+                        title="follow Crom on Medium"></a>
+            </div>
+
+            <div class="grid-item" onmouseover="showHiddenText(this, 'contact')" onmouseout="hideHiddenText(this)">
+                <a class="footer" href="../contact/contact.php"><img class="icon" src="images/icons/contact-us.png"
+                        alt="Contact" title="Contact"></a>
+            </div>
+
         </div>
-      </div>
     </div>
 
     <div class="rollover_row">
-      <div class="left-div">followCrom</div>
+        <div class="left-div">
+            followCrom
+        </div>
 
-      <div id="nav_hover" class="nav_hover">online</div>
+        <div id="nav_hover" class="nav_hover">online
+        </div>
     </div>
 
     <div class="gradient-div"></div>
 
-    <div class="topText">
-      <i class="fa-regular fa-paper-plane"></i
-      ><a class="page" href="index.html">Subscribe</a> to recieve a
-      <b>Word of the Week</b>
-    </div>
+    <div class="topText"><i class="fa-regular fa-paper-plane"></i><a class="page" href="index.html">Subscribe</a> to
+        recieve a <b>Word of the Week</b></div>
 
-    <div class="midText">
-      <i class="fa-solid fa-book"></i>Below is a small selection of books that
-      have contributed to the <b>Word of the Week</b> emails.
-      <br />
-      <i class="fa-solid fa-circle-exclamation"></i>This list was populated
-      using the Google Books REST API, and there may be instances where the API
-      has selected a different edition or version of a book than intended.
+    <div class="midText"><i class="fa-solid fa-book"></i>Below is a small selection of books that have contributed to
+        the
+        <b>Word of the Week</b> emails.
+        <br>
+        <i class="fa-solid fa-circle-exclamation"></i>This list was populated
+        using the Google Books REST API, and there may be instances where the API has selected a different edition or
+        version
+        of a book than intended.
     </div>
     <div id="csv-table"></div>
 
     <script src="js/display_csv.js"></script>
-  </body>
+
+</body>
+
 </html>
