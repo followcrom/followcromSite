@@ -115,7 +115,7 @@ if (count($errors) === 0):
             . "🌐 Visit us at https://followcrom.com"
             . "\n\n🤖 This is an automated message. Please do not reply.\n";
 
-        $confirmHeaders = "From: followCrom <noreply@followcrom.com>\r\n";
+        $confirmHeaders = "From: followCrom<noreply@followcrom.com>\r\n";
         $confirmHeaders .= "Reply-To: noreply@followcrom.com\r\n";
         $confirmHeaders .= "Content-Type: text/plain; charset=utf-8\r\n";
         $confirmHeaders .= "X-Mailer: PHP/" . phpversion();
