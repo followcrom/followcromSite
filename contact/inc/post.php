@@ -108,11 +108,11 @@ if (count($errors) === 0):
         $to = $inputs['email'];
         $subject = "Thanks for contacting followCrom";
         $confirmMessage = "👋 Hi " . htmlspecialchars($inputs['name']) . ",\n\n"
-            . "Thanks for getting in touch. We've received your message 📬:\n\n"
-            . "\"{$inputs['message']}\"\n\n"
+            . "Thanks for getting in touch. We've received your message:\n"
+            . "\"📬 {$inputs['message']}\"\n\n"
             . "We'll get back to you within 48 hours.\n\n"
-            . "🤗 Best regards,\nfollowCrom & Team 🏅"
-            . "🌐 Visit us at https://followcrom.com for more information."
+            . "Best regards,\nfollowCrom\n\n"
+            . "🌐 Visit us at https://followcrom.com"
             . "\n\n🤖 This is an automated message. Please do not reply.\n";
 
         $confirmHeaders = "From: followCrom <noreply@followcrom.com>\r\n";
