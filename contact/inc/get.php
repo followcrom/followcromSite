@@ -4,6 +4,8 @@
     </div>
 </noscript>
 
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post" novalidate>
     <h1>Get in Touch</h1>
 
@@ -45,7 +47,6 @@
     </div>
 
     <div>
-        <p>Anti-spam check:</p>
         <div class="g-recaptcha"
             data-sitekey="6LdzbkIoAAAAAJxgGPBrMvx688rUFaqoxUD5AMxS"></div>
     </div>
