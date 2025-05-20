@@ -42,6 +42,7 @@ if ($message === '') {
 }
 
 if (count($errors) === 0):
+
     // Verify reCAPTCHA
     $url = 'https://www.google.com/recaptcha/api/siteverify';
     $data = [
@@ -68,23 +69,27 @@ if (count($errors) === 0):
         exit;
     endif;
 
-    // Send email
+    // Send internal contact email
     $myemail = 'noreply@followcrom.com';
     $to = 'hello@followcrom.com';
     $subject = "Contact Form Submission";
     $body = "Contact form submission - here are the details:\n\n"
         . "Name: $name\n"
         . "Email: $email\n"
-        . "Message:\n$message\n";
+        . "Message:\n$message\n\n"
+        . "IP Address: {$_SERVER['REMOTE_ADDR']}\n"
+        . "User Agent: {$_SERVER['HTTP_USER_AGENT']}\n"
+        . "API Response: {$captchaSuccess->success}\n";
 
-    $headers = "From: FollowCrom Contact <{$myemail}>\r\n";
+    $headers = "From: followCrom Contact <{$myemail}>\r\n";
     $headers .= "Reply-To: {$email}\r\n";
     $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
     $headers .= "X-Mailer: PHP/" . phpversion();
 
     mail($to, $subject, $body, $headers);
-?>
 
+    // 🎉 Display success message
+?>
     <div class="submitted icons">
         <p>Thanks for your message <b><?php echo htmlspecialchars($name); ?></b>.
             <br>I will get back to you at <i><?php echo htmlspecialchars($email); ?></i> within 48 hours.
@@ -96,5 +101,27 @@ if (count($errors) === 0):
             </div>
         </div>
     </div>
+<?php
 
-<?php endif; ?>
+    // ✅ Send confirmation email to user
+    if (!empty($inputs['email'])) {
+        $to = $inputs['email'];
+        $subject = "Thanks for contacting followCrom";
+        $confirmMessage = "👋 Hi " . htmlspecialchars($inputs['name']) . ",\n\n"
+            . "Thanks for getting in touch. We've received your message 📬:\n\n"
+            . "\"{$inputs['message']}\"\n\n"
+            . "We'll get back to you within 48 hours.\n\n"
+            . "🤗 Best regards,\nfollowCrom & Team 🏅"
+            . "🌐 Visit us at https://followcrom.com for more information."
+            . "\n\n🤖 This is an automated message. Please do not reply.\n";
+
+        $confirmHeaders = "From: followCrom <noreply@followcrom.com>\r\n";
+        $confirmHeaders .= "Reply-To: noreply@followcrom.com\r\n";
+        $confirmHeaders .= "Content-Type: text/plain; charset=utf-8\r\n";
+        $confirmHeaders .= "X-Mailer: PHP/" . phpversion();
+
+        mail($to, $subject, $confirmMessage, $confirmHeaders);
+    }
+
+endif;
+?>
