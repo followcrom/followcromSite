@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Worker Debug</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2rem;
+        max-width: 800px;
+        margin: auto;
+      }
+      code,
+      pre {
+        background: #f4f4f4;
+        padding: 0.4rem;
+        border-radius: 4px;
+        display: block;
+        margin: 0.5rem 0;
+      }
+      button {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+      }
+      h2 {
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🛠 Service Worker Diagnostics</h1>
+
+    <h2>🧩 Active Service Worker</h2>
+    <p><strong>Status:</strong> <span id="status">Checking…</span></p>
+    <p><strong>Scope:</strong> <code id="scope">N/A</code></p>
+    <p><strong>Script URL:</strong> <code id="scriptURL">N/A</code></p>
+
+    <h2>📦 Cache Contents</h2>
+    <p>
+      <strong>Cache Name:</strong> <code id="cacheName">followcrom-v6</code>
+    </p>
+    <pre id="cacheList">Loading…</pre>
+
+    <h2>🔄 Update Controls</h2>
+    <button id="updateSW">Force Service Worker Update</button>
+    <button id="clearCache">Clear Cache</button>
+
+    <script>
+      const CACHE_NAME = "followcrom-v6";
+      document.getElementById("cacheName").textContent = CACHE_NAME;
+
+      // Service Worker Info
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .getRegistration()
+          .then((reg) => {
+            if (reg && reg.active) {
+              document.getElementById("status").textContent = "✅ Active";
+              document.getElementById("scope").textContent = reg.scope;
+              document.getElementById("scriptURL").textContent =
+                reg.active.scriptURL;
+            } else {
+              document.getElementById("status").textContent =
+                "❌ No active service worker";
+            }
+          })
+          .catch((err) => {
+            document.getElementById("status").textContent = "⚠️ Error";
+            console.error("Service worker debug error:", err);
+          });
+      }
+
+      // Cache Contents
+      caches
+        .open(CACHE_NAME)
+        .then((cache) => {
+          cache.keys().then((requests) => {
+            const urls = requests.map((req) => req.url).join("\n");
+            document.getElementById("cacheList").textContent =
+              urls || "No cached resources.";
+          });
+        })
+        .catch((err) => {
+          document.getElementById("cacheList").textContent =
+            "Error loading cache.";
+          console.error("Cache inspection error:", err);
+        });
+
+      // Update Trigger
+      document.getElementById("updateSW").addEventListener("click", () => {
+        navigator.serviceWorker.getRegistration().then((reg) => {
+          if (reg) {
+            reg.update().then(() => {
+              alert("Update triggered. Reload to see changes.");
+            });
+          }
+        });
+      });
+
+      // Clear Cache
+      document.getElementById("clearCache").addEventListener("click", () => {
+        caches.delete(CACHE_NAME).then((success) => {
+          if (success) {
+            alert(`Cache "${CACHE_NAME}" cleared.`);
+            document.getElementById("cacheList").textContent = "Cache cleared.";
+          } else {
+            alert("Failed to clear cache.");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
