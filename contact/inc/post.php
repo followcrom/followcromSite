@@ -94,21 +94,6 @@ if (count($errors) === 0):
 
     mail($to, $subject, $body, $headers);
 
-    // 🎉 Display success message
-?>
-    <div class="submitted icons">
-        <p>Thanks for your message <b><?php echo htmlspecialchars($name); ?></b>.
-            <br>I will get back to you at <i><?php echo htmlspecialchars($email); ?></i> within 48 hours.
-        </p>
-        <div class="icon-list">
-            <div class="icon-item">
-                <i class="fa-solid fa-envelope" style="color: #FF9900;"></i>
-                <a class="page" href="contact.php">Send another message</a>
-            </div>
-        </div>
-    </div>
-<?php
-
     // ✅ Send confirmation email to user
     if (!empty($inputs['email'])) {
         $to = $inputs['email'];
@@ -127,5 +112,10 @@ if (count($errors) === 0):
         mail($to, $subject, $confirmMessage, $confirmHeaders);
     }
 
+    // Store name in session and redirect to thank-you page
+    session_start();
+    $_SESSION['thank_you_name'] = $name;
+    header('Location: thank_you.php');
+    exit;
+
 endif;
-?>
