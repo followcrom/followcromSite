@@ -41,6 +41,12 @@ if ($message === '') {
     $errors['message'] = NO_MESSAGE;
 }
 
+// Honeypot check - reject if filled
+if (!empty($_POST['website'])) {
+    http_response_code(403);
+    die();
+}
+
 if (count($errors) === 0):
 
     // Verify reCAPTCHA
