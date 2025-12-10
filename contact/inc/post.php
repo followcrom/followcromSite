@@ -48,31 +48,31 @@ if ($message === '') {
 
 if (count($errors) === 0):
 
-    // // Verify reCAPTCHA
-    // $url = 'https://www.google.com/recaptcha/api/siteverify';
-    // $data = [
-    //     'secret'   => $recaptchaSecretKey,
-    //     'response' => $_POST['g-recaptcha-response'],
-    //     'remoteip' => $_SERVER['REMOTE_ADDR']
-    // ];
+    // Verify reCAPTCHA
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    $data = [
+        'secret'   => $recaptchaSecretKey,
+        'response' => $_POST['g-recaptcha-response'],
+        'remoteip' => $_SERVER['REMOTE_ADDR']
+    ];
 
-    // $options = [
-    //     'http' => [
-    //         'header'  => "Content-Type: application/x-www-form-urlencoded\r\nUser-Agent:MyAgent/1.0\r\n",
-    //         'method'  => 'POST',
-    //         'content' => http_build_query($data)
-    //     ]
-    // ];
+    $options = [
+        'http' => [
+            'header'  => "Content-Type: application/x-www-form-urlencoded\r\nUser-Agent:MyAgent/1.0\r\n",
+            'method'  => 'POST',
+            'content' => http_build_query($data)
+        ]
+    ];
 
-    // $context = stream_context_create($options);
-    // $verify = file_get_contents($url, false, $context);
-    // $captchaSuccess = json_decode($verify);
+    $context = stream_context_create($options);
+    $verify = file_get_contents($url, false, $context);
+    $captchaSuccess = json_decode($verify);
 
-    // if (!$captchaSuccess->success):
-    //     echo "<div class='submitted'>Oh no! It looks like you were unable to pass the captcha.
-    //           <br>Don't worry, you can <a class='page' href='contact.php'>try again</a>.</div>";
-    //     return;
-    // endif;
+    if (!$captchaSuccess->success):
+        echo "<div class='submitted'>Oh no! It looks like you were unable to pass the captcha.
+              <br>Don't worry, you can <a class='page' href='contact.php'>try again</a>.</div>";
+        return;
+    endif;
 
     // Send internal contact email
     $myemail = 'noreply@followcrom.com';
