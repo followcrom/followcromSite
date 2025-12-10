@@ -1,23 +1,8 @@
 <?php
 
-// Rate limiting: 1 submission per minute per IP
+// Record this submission time (rate limit check is done in contact.php)
 $ip = $_SERVER['REMOTE_ADDR'];
 $rate_limit_file = sys_get_temp_dir() . '/contact_rate_limit_' . md5($ip);
-$rate_limit_duration = 60; // seconds
-
-if (file_exists($rate_limit_file)) {
-    $last_submission = (int)file_get_contents($rate_limit_file);
-    $time_since_last = time() - $last_submission;
-
-    if ($time_since_last < $rate_limit_duration) {
-        // Too soon - redirect to 429 page
-        http_response_code(429);
-        header('Location: /429.html');
-        exit;
-    }
-}
-
-// Record this submission time
 file_put_contents($rate_limit_file, time());
 
 const NAME_REQUIRED = 'Please enter your name';
@@ -61,39 +46,33 @@ if ($message === '') {
     $errors['message'] = NO_MESSAGE;
 }
 
-// Honeypot check - reject if filled
-if (!empty($_POST['website'])) {
-    http_response_code(403);
-    die();
-}
-
 if (count($errors) === 0):
 
-    // Verify reCAPTCHA
-    $url = 'https://www.google.com/recaptcha/api/siteverify';
-    $data = [
-        'secret'   => $recaptchaSecretKey,
-        'response' => $_POST['g-recaptcha-response'],
-        'remoteip' => $_SERVER['REMOTE_ADDR']
-    ];
+    // // Verify reCAPTCHA
+    // $url = 'https://www.google.com/recaptcha/api/siteverify';
+    // $data = [
+    //     'secret'   => $recaptchaSecretKey,
+    //     'response' => $_POST['g-recaptcha-response'],
+    //     'remoteip' => $_SERVER['REMOTE_ADDR']
+    // ];
 
-    $options = [
-        'http' => [
-            'header'  => "Content-Type: application/x-www-form-urlencoded\r\nUser-Agent:MyAgent/1.0\r\n",
-            'method'  => 'POST',
-            'content' => http_build_query($data)
-        ]
-    ];
+    // $options = [
+    //     'http' => [
+    //         'header'  => "Content-Type: application/x-www-form-urlencoded\r\nUser-Agent:MyAgent/1.0\r\n",
+    //         'method'  => 'POST',
+    //         'content' => http_build_query($data)
+    //     ]
+    // ];
 
-    $context = stream_context_create($options);
-    $verify = file_get_contents($url, false, $context);
-    $captchaSuccess = json_decode($verify);
+    // $context = stream_context_create($options);
+    // $verify = file_get_contents($url, false, $context);
+    // $captchaSuccess = json_decode($verify);
 
-    if (!$captchaSuccess->success):
-        echo "<div class='submitted'>Oh no! It looks like you were unable to pass the captcha.
-              <br>Don't worry, you can <a class='page' href='contact.php'>try again</a>.</div>";
-        exit;
-    endif;
+    // if (!$captchaSuccess->success):
+    //     echo "<div class='submitted'>Oh no! It looks like you were unable to pass the captcha.
+    //           <br>Don't worry, you can <a class='page' href='contact.php'>try again</a>.</div>";
+    //     return;
+    // endif;
 
     // Send internal contact email
     $myemail = 'noreply@followcrom.com';
