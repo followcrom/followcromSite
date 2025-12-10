@@ -1,5 +1,25 @@
 <?php
 
+// Rate limiting: 1 submission per minute per IP
+$ip = $_SERVER['REMOTE_ADDR'];
+$rate_limit_file = sys_get_temp_dir() . '/contact_rate_limit_' . md5($ip);
+$rate_limit_duration = 60; // seconds
+
+if (file_exists($rate_limit_file)) {
+    $last_submission = (int)file_get_contents($rate_limit_file);
+    $time_since_last = time() - $last_submission;
+
+    if ($time_since_last < $rate_limit_duration) {
+        // Too soon - redirect to 429 page
+        http_response_code(429);
+        header('Location: /429.html');
+        exit;
+    }
+}
+
+// Record this submission time
+file_put_contents($rate_limit_file, time());
+
 const NAME_REQUIRED = 'Please enter your name';
 const EMAIL_REQUIRED = 'Please enter your email';
 const EMAIL_INVALID = 'Please enter a valid email';
