@@ -13,15 +13,7 @@ if (!empty($_POST['website'])) {
     exit;
 }
 
-// 2. Time check: reject submissions faster than 3 seconds (bots submit instantly)
-$form_time = isset($_POST['form_time']) ? (int)$_POST['form_time'] : 0;
-$elapsed_ms = (int)(microtime(true) * 1000) - $form_time;
-if ($form_time === 0 || $elapsed_ms < 3000) {
-    header('Location: subscribed.html');
-    exit;
-}
-
-// 3. Referer check: must originate from this site
+// 2. Referer check: must originate from this site
 $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
 if (strpos($referer, 'followcrom') === false) {
     header('Location: subscribed.html');
