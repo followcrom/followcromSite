@@ -1,25 +1,49 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
-
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        
-        // Send notification email
-        $to = 'followcrom@gmail.com';
-        $subject = 'New Word of the Day Subscriber';
-        $message = "You have a new subscriber: " . $email;
-        $headers = 'From: info@followcrom.online' . "\r\n";
-        mail($to, $subject, $message, $headers);
-
-        // Redirect to a different page after handling the subscription
-        header('Location: subscribed.html');
-        exit; // Always call exit after header redirects
-    } else {
-        echo "Invalid email address.";
-        // Optionally, add a redirect here as well to an error page or back to the form
-    }
-} else {
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     echo "Invalid request.";
-    // Optionally, add a redirect here as well
+    exit;
+}
+
+// --- Bot checks ---
+
+// 1. Honeypot: must be empty
+if (!empty($_POST['website'])) {
+    // Silently redirect as if success — don't alert bots that they were caught
+    header('Location: subscribed.html');
+    exit;
+}
+
+// 2. Time check: reject submissions faster than 3 seconds (bots submit instantly)
+$form_time = isset($_POST['form_time']) ? (int)$_POST['form_time'] : 0;
+$elapsed_ms = (int)(microtime(true) * 1000) - $form_time;
+if ($form_time === 0 || $elapsed_ms < 3000) {
+    header('Location: subscribed.html');
+    exit;
+}
+
+// 3. Referer check: must originate from this site
+$referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+if (strpos($referer, 'followcrom') === false) {
+    header('Location: subscribed.html');
+    exit;
+}
+
+// --- Process legitimate submission ---
+
+$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+    // Send notification email
+    $to = 'followcrom@gmail.com';
+    $subject = 'New Word of the Day Subscriber';
+    $message = "You have a new subscriber: " . $email;
+    $headers = 'From: info@followcrom.online' . "\r\n";
+    mail($to, $subject, $message, $headers);
+
+    header('Location: subscribed.html');
+    exit;
+} else {
+    echo "Invalid email address.";
 }
 ?>

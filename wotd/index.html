@@ -168,9 +168,19 @@
           placeholder="someone@example.com"
           required
         />
+        <!-- Honeypot: hidden from humans via CSS, bots tend to fill it in -->
+        <div style="position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden;" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+        <!-- Timestamp set by JS to detect instant (bot) submissions -->
+        <input type="hidden" name="form_time" id="form_time" value="" />
         <input type="submit" value="Subscribe" />
       </form>
     </div>
+    <script>
+      document.getElementById('form_time').value = Date.now();
+    </script>
 
     <div class="mailMan">
       <img
