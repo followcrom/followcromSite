@@ -1,4 +1,4 @@
-const CACHE_NAME = 'followcrom-v8';
+const CACHE_NAME = 'followcrom-v9';
 const resourcesToCache = [
   '/', // Cache the root, which will resolve to index.html
   '/css/main.css',
