@@ -147,6 +147,7 @@
   display: table;
 }
 
+.content_box h2,
 .content_box h1 {
   font-family: "Verdana", sans-serif;
   text-transform: bold;
@@ -156,6 +157,7 @@
   line-height: 1.2;
 }
 
+.content_box p,
 .content_box h3 {
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-weight: normal;
@@ -290,10 +292,12 @@ a:hover {
     width: 95%;
   }
 
+  .content_box h2,
   .content_box h1 {
     font-size: 2em;
   }
 
+  .content_box p,
   .content_box h3 {
     font-size: 0.95em;
     line-height: 1.8;
@@ -345,11 +349,13 @@ a:hover {
     width: 256px;
   }
 
+  .content_box h2,
   .content_box h1 {
     text-align: center;
     font-size: 2rem;
   }
 
+  .content_box p,
   .content_box h3 {
     padding: 0px;
     clear: both;
