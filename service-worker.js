@@ -7,6 +7,11 @@ const resourcesToCache = [
 
 // Install event - Precache resources
 self.addEventListener('install', (event) => {
+  // Activate the new worker immediately instead of waiting for
+  // all open tabs to close — otherwise an old version keeps
+  // handling requests until the next full browser session.
+  self.skipWaiting();
+
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {

@@ -48,7 +48,7 @@
 
     <div>
         <div class="g-recaptcha"
-            data-sitekey="6LdzbkIoAAAAAJxgGPBrMvx688rUFaqoxUD5AMxS"></div>
+            data-sitekey="6LcdHhwtAAAAAGaKONnzyowEmDGMZV9FixaYULFJ"></div>
     </div>
 
     <div style="display:none;" aria-hidden="true">
