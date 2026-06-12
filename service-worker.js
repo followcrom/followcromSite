@@ -1,4 +1,4 @@
-const CACHE_NAME = 'followcrom-v7';
+const CACHE_NAME = 'followcrom-v8';
 const resourcesToCache = [
   '/', // Cache the root, which will resolve to index.html
   '/css/main.css',
@@ -20,22 +20,59 @@ self.addEventListener('install', (event) => {
 
 // Fetch event - Cache-first strategy with network fallback
 self.addEventListener('fetch', (event) => {
+  // Only handle same-origin GET requests; let the browser deal with the rest
+  // (fonts, analytics, POSTs to the contact form, etc.)
+  if (
+    event.request.method !== 'GET' ||
+    !event.request.url.startsWith(self.location.origin)
+  ) {
+    return;
+  }
+
+  // Pages: network-first, so a deploy is picked up on the next visit.
+  // Falls back to cache, then offline.html.
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then((networkResponse) => {
+          const responseClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseClone);
+          });
+          return networkResponse;
+        })
+        .catch(() =>
+          caches
+            .match(event.request)
+            .then((cached) => cached || caches.match('/offline.html'))
+        )
+    );
+    return;
+  }
+
+  // Static assets (images, CSS, JS): cache-first
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
-        console.log('Found in cache:', event.request.url);
         return cachedResponse; // Return from cache if found
       }
 
-      // If not found in cache, fetch from network
+      // If not found in cache, fetch from network and cache the result
       return fetch(event.request)
+        .then((networkResponse) => {
+          if (networkResponse.ok) {
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseClone);
+            });
+          }
+          return networkResponse;
+        })
         .catch(() => {
-          console.error('Network request failed, serving offline page...');
-          return caches.match('/offline.html'); // Fallback to offline page if network fails
+          // No offline.html here: an HTML response in place of an
+          // image/CSS/JS file would render as a broken asset.
+          return Response.error();
         });
-    }).catch((err) => {
-      console.error('Error fetching resource:', err);
-      return fetch(event.request); // Fallback to network if cache fails
     })
   );
 });
